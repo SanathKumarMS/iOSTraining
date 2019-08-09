@@ -140,12 +140,20 @@
                                     <action selector="back" destination="Wlq-Cp-WA3" eventType="touchUpInside" id="253-Qu-FII"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSy-nf-oz0">
+                                <rect key="frame" x="112" y="348" width="150" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="9AB-Js-oAd"/>
                     </view>
                     <connections>
                         <outlet property="label" destination="YFp-Tn-kYx" id="aqj-OX-WH9"/>
+                        <outlet property="label2" destination="bSy-nf-oz0" id="Esh-Ni-fpz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BKO-Uq-4Wf" userLabel="First Responder" sceneMemberID="firstResponder"/>
