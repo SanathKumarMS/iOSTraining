@@ -51,21 +51,22 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RzT-jd-N2d">
-                                <rect key="frame" x="89" y="660" width="85" height="45"/>
+                                <rect key="frame" x="89" y="653" width="85" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="getName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g2N-lQ-1Kj"/>
-                                    <segue destination="Vtk-yf-okC" kind="show" id="ckV-vf-BKu"/>
+                                    <segue destination="Vtk-yf-okC" kind="presentation" modalTransitionStyle="flipHorizontal" id="ckV-vf-BKu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrK-B4-oB7">
-                                <rect key="frame" x="218" y="660" width="85" height="45"/>
+                                <rect key="frame" x="222" y="653" width="85" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="programTransition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q54-aW-IYt"/>
+                                    <segue destination="Wlq-Cp-WA3" kind="presentation" modalTransitionStyle="crossDissolve" id="lbk-EB-Uay"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -96,6 +97,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rK-GI-PjA">
+                                <rect key="frame" x="145" y="652" width="85" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="back" destination="Vtk-yf-okC" eventType="touchUpInside" id="J2W-Ow-N74"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="LCu-EM-0Rw"/>
@@ -103,22 +113,34 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cSx-U0-M0w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="176.80000000000001" y="99.753694581280797"/>
+            <point key="canvasLocation" x="172" y="106"/>
         </scene>
-        <!--View Controller-->
+        <!--ThirdVC-->
         <scene sceneID="lPY-SY-Lwj">
             <objects>
-                <viewController id="Wlq-Cp-WA3" sceneMemberID="viewController">
+                <viewController id="Wlq-Cp-WA3" customClass="ThirdVC" customModule="Assignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WOp-bA-UPk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AqX-ao-yLr">
+                                <rect key="frame" x="112" y="112" width="150" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="9AB-Js-oAd"/>
                     </view>
+                    <connections>
+                        <outlet property="displayTest" destination="AqX-ao-yLr" id="Nj6-eN-pnX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BKO-Uq-4Wf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-793" y="785"/>
+            <point key="canvasLocation" x="-831" y="881"/>
         </scene>
     </scenes>
     <resources>

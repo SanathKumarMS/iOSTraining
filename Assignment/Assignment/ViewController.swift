@@ -18,6 +18,10 @@ class ViewController: UIViewController {
     
     @IBAction func getName(_ sender: Any) {
         let name = nameField!.text
+        
+        let thirdVC = ThirdVC(nibName: "ThirdVC", bundle: nil)
+        thirdVC.text = name!
+    
         print(name!)
     }
     
