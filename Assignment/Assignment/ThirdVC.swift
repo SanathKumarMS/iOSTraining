@@ -12,13 +12,11 @@ class ThirdVC: UIViewController {
     
     var text : String = ""
     
-    @IBOutlet weak var displayName: UILabel!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        displayName.text = text
+        //displayName?.text = text
     }
 
     
