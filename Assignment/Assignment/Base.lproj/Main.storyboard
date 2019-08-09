@@ -63,10 +63,11 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrK-B4-oB7">
                                 <rect key="frame" x="222" y="653" width="85" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="programTransition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q54-aW-IYt"/>
-                                    <segue destination="Wlq-Cp-WA3" kind="presentation" modalTransitionStyle="crossDissolve" id="lbk-EB-Uay"/>
+                                    <segue destination="Wlq-Cp-WA3" kind="presentation" modalTransitionStyle="flipHorizontal" id="lbk-EB-Uay"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -130,10 +131,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="II2-p1-T8x">
+                                <rect key="frame" x="112" y="671" width="150" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="back" destination="Wlq-Cp-WA3" eventType="touchUpInside" id="253-Qu-FII"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="9AB-Js-oAd"/>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="YFp-Tn-kYx" id="aqj-OX-WH9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BKO-Uq-4Wf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

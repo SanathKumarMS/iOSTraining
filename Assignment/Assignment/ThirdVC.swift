@@ -12,14 +12,30 @@ class ThirdVC: UIViewController {
     
     var text : String = ""
     
-
+    
+    @IBOutlet weak var label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //displayName?.text = text
+        
+        let def = "def"
+        
+        label.text = text
+        
+        print("Label : \(label.text ?? def)")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let def = "def"
+        
+        label.text = text
+        
+        print("Label : \(label.text ?? def)")
     }
 
+    @IBAction func back()
+    {
+        dismiss(animated: true, completion: nil)
+    }
     
-
-
 }
