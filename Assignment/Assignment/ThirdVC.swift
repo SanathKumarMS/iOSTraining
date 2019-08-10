@@ -11,7 +11,6 @@ import UIKit
 class ThirdVC: UIViewController {
     
     var text : String = ""
-    var completionHandler :((String) -> String)?
     @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {

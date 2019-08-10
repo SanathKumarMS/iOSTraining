@@ -12,10 +12,18 @@ class ProgrammaticVC: UIViewController {
     
     var name : String = ""
     @IBOutlet weak var displayNameLabel: UILabel!
+    @IBOutlet weak var backButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.white
+        setupUI()
+    }
+    
+    func setupUI()
+    {
+        backButton.layer.cornerRadius = 10
+        displayNameLabel.center.x = self.view.frame.maxX/2
+        backButton.center.x = self.view.frame.maxX/2
     }
     
     override func viewWillAppear(_ animated: Bool) {

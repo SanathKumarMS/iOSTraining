@@ -12,7 +12,7 @@ class SecondVC: UIViewController {
     
     
     @IBOutlet weak var gestureLabel: UILabel!
-    
+    @IBOutlet weak var backButton: UIButton!
     var viewblock : UIView!
     
     override func viewDidLoad() {
@@ -24,6 +24,8 @@ class SecondVC: UIViewController {
     func setupUI()
     {
         //let viewblock = UIView(frame: CGRect(x: 100, y: 200, width: 200, height: 100))
+        gestureLabel.center.x = self.view.center.x
+        backButton.center.x = self.view.frame.maxX/2
         viewblock = UIView()
         viewblock.frame = CGRect(x: 0, y: 0, width: 200, height: 100)
         viewblock.backgroundColor = UIColor.gray
@@ -34,6 +36,8 @@ class SecondVC: UIViewController {
         tapGesture.numberOfTapsRequired = 2
         gestureLabel.isUserInteractionEnabled = true
         gestureLabel.addGestureRecognizer(tapGesture)
+        
+        backButton.layer.cornerRadius = 10
         
     }
     

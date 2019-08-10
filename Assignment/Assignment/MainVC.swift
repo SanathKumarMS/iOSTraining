@@ -12,11 +12,29 @@ class MainVC: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var segueTransitionButton: UIButton!
+    @IBOutlet weak var progTransitionButton: UIButton!
+    @IBOutlet weak var logo: UIImageView!
+    @IBOutlet weak var descriptionLabel: UILabel!
     var name : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setupUI()
+    }
+    
+    func setupUI()
+    {
+        titleLabel.center.x = self.view.frame.maxX/2
+        logo.center.x = self.view.frame.maxX/2
+        descriptionLabel?.center.x = self.view.frame.maxX/2
+        segueTransitionButton.center.x = self.view.frame.origin.x + 130
+        progTransitionButton.center.x = self.view.frame.maxX - 130
+        print(self.view.frame.maxX)
+        //segueTransitionButton.backgroundColor = .clear
+        segueTransitionButton.layer.cornerRadius = 10
+        //segueTransitionButton.layer.borderColor = UIColor.black.cgColor
+        progTransitionButton.layer.cornerRadius = 10
     }
     
     
@@ -24,6 +42,7 @@ class MainVC: UIViewController {
         name = nameField.text ?? "Did not read"
         let transitionToVC = self.storyboard?.instantiateViewController(withIdentifier: "programvc") as! ProgrammaticVC
         transitionToVC.name = name
+        transitionToVC.modalTransitionStyle = UIModalTransitionStyle.partialCurl
         self.present(transitionToVC, animated: true, completion: nil)
     }
     
