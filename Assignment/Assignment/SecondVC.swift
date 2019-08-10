@@ -31,7 +31,7 @@ class SecondVC: UIViewController {
         self.view.addSubview(viewblock)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(changeViewColor))
-        tapGesture.numberOfTapsRequired = 1
+        tapGesture.numberOfTapsRequired = 2
         gestureLabel.isUserInteractionEnabled = true
         gestureLabel.addGestureRecognizer(tapGesture)
         

@@ -21,15 +21,21 @@ class ViewController: UIViewController {
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        name = nameField.text ?? ""
-        print(name)
-        if segue.destination is ThirdVC
-        {
-            let thirdViewController = segue.destination as? ThirdVC
-            thirdViewController?.text = name
-        }
+    
+    @IBAction func programmaticTransition(_ sender: UIButton) {
+        let transitionToVC = ProgrammaticVC()
+        transitionToVC.name = nameField.text
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        name = nameField.text ?? ""
+//        print(name)
+//        if segue.destination is ThirdVC
+//        {
+//            let thirdViewController = segue.destination as? ThirdVC
+//            thirdViewController?.text = name
+//        }
+//    }
 
 }
 
