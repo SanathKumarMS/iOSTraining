@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainVC: UIViewController {
+class MainVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var nameField: UITextField!
@@ -35,8 +35,24 @@ class MainVC: UIViewController {
         segueTransitionButton.layer.cornerRadius = 10
         //segueTransitionButton.layer.borderColor = UIColor.black.cgColor
         progTransitionButton.layer.cornerRadius = 10
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+//        view.addGestureRecognizer(tapGesture)
+        self.nameField.delegate = self
+        
     }
     
+    
+    func textFieldShouldReturn(_ textField : UITextField) -> Bool
+    {
+        print("Inside return")
+        textField.resignFirstResponder()
+        //self.view.endEditing(true)
+        return true
+    }
+    
+//    @objc func hideKeyboard() {
+//        view.endEditing(true)
+//    }
     
     @IBAction func programmaticTransition(_ sender: Any) {
         name = nameField.text ?? "Did not read"
