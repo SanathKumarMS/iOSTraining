@@ -32,6 +32,14 @@ class ProgrammaticVC: UIViewController {
     }
     
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(withDuration: 1, animations: {
+            self.displayNameLabel.center.y += 200
+        })
+    }
+    
+    
     @IBAction func back(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
