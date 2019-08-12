@@ -24,6 +24,9 @@ class ProgrammaticVC: UIViewController {
         backButton.layer.cornerRadius = 10
         displayNameLabel.center.x = self.view.frame.maxX/2
         backButton.center.x = self.view.frame.maxX/2
+        
+        //let WillGoBackground = Notification.Name("WillGoBackground")
+        NotificationCenter.default.addObserver(self, selector: #selector(onWillGoBackground), name: UIApplication.willResignActiveNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,10 +50,21 @@ class ProgrammaticVC: UIViewController {
         })
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        //NotificationCenter.default.post(name: .WillGoBackground, object: nil)
+    }
+    
+    @objc func onWillGoBackground(_ notification : Notification){
+        self.view.backgroundColor = UIColor.red
+    }
+    
     
     @IBAction func back(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
-    
 
 }
+
+//extension Notification.Name{
+//    static let WillGoBackground = Notification.Name("WillGoBackground")
+//}
