@@ -57,9 +57,13 @@ class MainVC: UIViewController, UITextFieldDelegate {
     @IBAction func programmaticTransition(_ sender: Any) {
         name = nameField.text ?? "Did not read"
         let transitionToVC = self.storyboard?.instantiateViewController(withIdentifier: "programvc") as! ProgrammaticVC
-        transitionToVC.name = name
+        //transitionToVC.name = name
         transitionToVC.modalTransitionStyle = UIModalTransitionStyle.partialCurl
-        self.present(transitionToVC, animated: true, completion: nil)
+        
+        //self.present(transitionToVC, animated: true, completion: nil)
+        self.present(transitionToVC, animated: true) {
+            NotificationCenter.default.post(name: .didReceiveData, object: self, userInfo: ["name" : self.name])
+        }
     }
     
 
@@ -74,4 +78,9 @@ class MainVC: UIViewController, UITextFieldDelegate {
     //        }
     //    }
     
+}
+
+
+extension Notification.Name{
+    static let didReceiveData = Notification.Name("didReceiveData")
 }
