@@ -28,20 +28,20 @@ class ProgrammaticVC: UIViewController {
         //let WillGoBackground = Notification.Name("WillGoBackground")
         NotificationCenter.default.addObserver(self, selector: #selector(onWillGoBackground), name: UIApplication.willResignActiveNotification, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData), name: .didReceiveData, object: nil)
+        //NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData), name: .didReceiveData, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        if name == ""
-//        {
-//            print("Did not read name")
-//        }
-//        else
-//        {
-//            print("Name in ProgVC : \(name)")
-//            displayNameLabel?.text = name
-//        }
+        if name == ""
+        {
+            print("Did not read name")
+        }
+        else
+        {
+            print("Name in ProgVC : \(name)")
+            displayNameLabel?.text = name
+        }
     }
     
     
@@ -62,15 +62,15 @@ class ProgrammaticVC: UIViewController {
         })
     }
     
-    @objc func onDidReceiveData(_ notification : Notification){
-        print("Entered notificaiton")
-        if let data = notification.userInfo  as? [String:String]
-        {
-            self.name = data["name"]!
-            print("Name in ProgVC from notification : \(name)")
-            displayNameLabel?.text = name
-        }
-    }
+//    @objc func onDidReceiveData(_ notification : Notification){
+//        print("Entered notificaiton")
+//        if let data = notification.userInfo  as? [String:String]
+//        {
+//            self.name = data["name"]!
+//            print("Name in ProgVC from notification : \(name)")
+//            displayNameLabel?.text = name
+//        }
+//    }
     
     @objc func onWillGoBackground(_ notification : Notification){
         self.view.backgroundColor = UIColor.red
