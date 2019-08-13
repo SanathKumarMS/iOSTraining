@@ -51,10 +51,6 @@ class ProgrammaticVC: UIViewController {
         //moveToCenter()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        //NotificationCenter.default.post(name: .WillGoBackground, object: nil)
-    }
-    
     func moveToCenter()
     {
         UIView.animate(withDuration: 1, animations: {
