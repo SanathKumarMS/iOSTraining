@@ -14,6 +14,7 @@ class SecondVC: UIViewController {
     @IBOutlet weak var gestureLabel: UILabel!
     @IBOutlet weak var backButton: UIButton!
     var viewblock : UIView!
+    var changeToRedButton : UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,19 +40,30 @@ class SecondVC: UIViewController {
         
         backButton.layer.cornerRadius = 10
         
+        changeToRedButton = UIButton()
+        changeToRedButton.frame = CGRect(x: 0, y: 500, width: 85, height: 45)
+        changeToRedButton.center.x = self.view.center.x
+        changeToRedButton.layer.cornerRadius = 10
+        changeToRedButton.backgroundColor = UIColor.red
+        changeToRedButton.setTitle("Red", for: .normal)
+        changeToRedButton.addTarget(self, action: #selector(changeViewToRed), for: .touchDown)
+        self.view.addSubview(changeToRedButton)
         
     }
     
     
-    @objc func changeViewColor(sender: UITapGestureRecognizer)
-    {
+    @objc func changeViewColor(sender: UITapGestureRecognizer){
         let randomColor = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: CGFloat.random(in: 0...1))
         viewblock.backgroundColor = randomColor
     }
     
     
-    @IBAction func back()
-    {
+    @objc func changeViewToRed(){
+        viewblock.backgroundColor = UIColor.red
+    }
+    
+    
+    @IBAction func back(){
         dismiss(animated: true, completion: nil)
     }
 }
