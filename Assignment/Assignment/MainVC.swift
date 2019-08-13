@@ -31,14 +31,11 @@ class MainVC: UIViewController, UITextFieldDelegate {
         segueTransitionButton.center.x = self.view.frame.origin.x + 130
         progTransitionButton.center.x = self.view.frame.maxX - 130
         print(self.view.frame.maxX)
-        //segueTransitionButton.backgroundColor = .clear
         segueTransitionButton.layer.cornerRadius = 10
-        //segueTransitionButton.layer.borderColor = UIColor.black.cgColor
         progTransitionButton.layer.cornerRadius = 10
-//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-//        view.addGestureRecognizer(tapGesture)
         self.nameField.delegate = self
         
+        NotificationCenter.default.addObserver(self, selector: #selector(checkForNonAlphabets), name: UITextField.textDidChangeNotification, object: nil)
     }
     
     
@@ -50,9 +47,32 @@ class MainVC: UIViewController, UITextFieldDelegate {
         return true
     }
     
-//    @objc func hideKeyboard() {
-//        view.endEditing(true)
-//    }
+    @objc func checkForNonAlphabets()
+    {
+        print("Text entered : \(nameField.text!)")
+        let tempName = nameField.text!
+//        let alert = UIAlertController(title: "Invalid Input", message: "A non-alphabet character was entered", preferredStyle: .alert)
+//        let action = UIAlertAction(title: "Close", style: .default, handler: nil)
+//        alert.addAction(action)
+        
+        do
+        {
+            let regex = try NSRegularExpression(pattern: "[^A-Za-z ]", options: [])
+            if regex.firstMatch(in: tempName, options: [], range: NSMakeRange(0, tempName.count)) != nil
+            {
+                //present(alert, animated: true, completion: nil)
+                let correctedName = String(tempName[..<tempName.index(before: tempName.endIndex)])
+                print("Corrected : \(correctedName)")
+                nameField.text = correctedName
+            }
+        }
+        catch
+        {
+            
+        }
+        
+    }
+    
     
     @IBAction func programmaticTransition(_ sender: Any) {
         name = nameField.text ?? "Did not read"

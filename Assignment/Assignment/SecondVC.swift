@@ -45,6 +45,8 @@ class SecondVC: UIViewController {
         changeToRedButton.center.x = self.view.center.x
         changeToRedButton.layer.cornerRadius = 10
         changeToRedButton.backgroundColor = UIColor.red
+        changeToRedButton.layer.borderWidth = 1
+        changeToRedButton.layer.borderColor = UIColor.black.cgColor
         changeToRedButton.setTitle("Red", for: .normal)
         changeToRedButton.addTarget(self, action: #selector(changeViewToRed), for: .touchDown)
         self.view.addSubview(changeToRedButton)
