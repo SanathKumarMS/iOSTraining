@@ -92,7 +92,8 @@ class MainVC: UIViewController, UITextFieldDelegate {
         transitionToVC.name = name
         transitionToVC.modalTransitionStyle = UIModalTransitionStyle.partialCurl
         
-        self.present(transitionToVC, animated: true, completion: nil)
+        //self.present(transitionToVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(transitionToVC, animated: true)
 //        self.present(transitionToVC, animated: true) {
 //            NotificationCenter.default.post(name: .didReceiveData, object: self, userInfo: ["name" : self.name])
 //        }
