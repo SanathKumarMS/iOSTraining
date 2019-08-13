@@ -51,17 +51,27 @@ class SecondVC: UIViewController {
         changeToRedButton.addTarget(self, action: #selector(changeViewToRed), for: .touchDown)
         self.view.addSubview(changeToRedButton)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(onWillGoBackground), name: UIApplication.willResignActiveNotification, object: nil)
+        
     }
     
     
     @objc func changeViewColor(sender: UITapGestureRecognizer){
+        changeColor()
+    }
+    
+    func changeColor(){
         let randomColor = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: CGFloat.random(in: 0...1))
         viewblock.backgroundColor = randomColor
     }
     
-    
     @objc func changeViewToRed(){
         viewblock.backgroundColor = UIColor.red
+    }
+    
+    @objc func onWillGoBackground(_ notification: Notification)
+    {
+        changeColor()
     }
     
     
