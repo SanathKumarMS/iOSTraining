@@ -33,9 +33,11 @@ class MainVC: UIViewController, UITextFieldDelegate {
         print(self.view.frame.maxX)
         segueTransitionButton.layer.cornerRadius = 10
         progTransitionButton.layer.cornerRadius = 10
+        nameField.layer.borderWidth = 1
+        nameField.layer.borderColor = UIColor.black.cgColor
         self.nameField.delegate = self
         
-        NotificationCenter.default.addObserver(self, selector: #selector(checkForNonAlphabets), name: UITextField.textDidChangeNotification, object: nil)
+        //NotificationCenter.default.addObserver(self, selector: #selector(checkForNonAlphabets), name: UITextField.textDidChangeNotification, object: nil)
     }
     
     
@@ -45,6 +47,16 @@ class MainVC: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         //self.view.endEditing(true)
         return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        print(string)
+        //print(CharacterSet.letters.debugDescription)
+        if string.rangeOfCharacter(from: CharacterSet.letters) != nil || string == ""
+        {
+            return true
+        }
+        return false
     }
     
     @objc func checkForNonAlphabets()
