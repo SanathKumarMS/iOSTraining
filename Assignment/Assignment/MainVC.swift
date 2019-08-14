@@ -59,6 +59,34 @@ class MainVC: UIViewController, UITextFieldDelegate {
         return false
     }
     
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        print("Should Begin Editing")
+        return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        print("Did Begin Editing")
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        print("Should End Editing")
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print("Did End Editing")
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        print("Did End Editing2")
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        print("Should Clear")
+        return true
+    }
+    
+    
     @objc func checkForNonAlphabets()
     {
         print("Text entered : \(nameField.text!)")
