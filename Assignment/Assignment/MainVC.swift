@@ -86,7 +86,7 @@ class MainVC: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    
+    //This is with notifications
     @objc func checkForNonAlphabets()
     {
         print("Text entered : \(nameField.text!)")
