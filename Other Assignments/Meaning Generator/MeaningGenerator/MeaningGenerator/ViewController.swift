@@ -71,6 +71,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //    }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        print("\n\n")
         word = textField.text ?? "Did not read"
         print("Word is : \(word)")
         
@@ -109,7 +110,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         }
                     }
                 } catch {
-                    print(error)
+                    print("Error : \(error)")
                 }
             }
 //                if let jsonData = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! NSDictionary{
