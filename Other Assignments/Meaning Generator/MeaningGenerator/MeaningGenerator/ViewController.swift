@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
-    struct Root: Codable {
+    struct Root: Decodable {
         let results: [Result]
     }
     struct Result: Codable {
@@ -87,6 +87,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 print(error)
             }
             if let response = response, let data = data{
+                
                 do {
                     //print(String(data: data, encoding: .utf8) ?? "")
                     let root = try JSONDecoder().decode(Root.self, from: data)
@@ -96,11 +97,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
                             for entry in lexical.entries {
                                 for sense in entry.senses {
                                     for definition in sense.definitions {
-                                        print("Sense : \(definition)")
+                                        print("Meaning : \(definition)")
                                     }
                                     if let subsenses = sense.subsenses{
                                         for subsense in subsenses{
-                                            print("\tSubsenses : \(subsense.definitions[0])")
+                                            print("Meaning : \(subsense.definitions[0])")
                                         }
                                     }
                                 }
