@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54368BE5230BE97500233C71 /* OnBoardCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54368BE4230BE97500233C71 /* OnBoardCollectionViewController.swift */; };
+		54368BE9230BEC8400233C71 /* OnBoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54368BE8230BEC8400233C71 /* OnBoardCell.swift */; };
 		5477261422FD45D90063CDD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5477261322FD45D90063CDD3 /* AppDelegate.swift */; };
 		5477261622FD45D90063CDD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5477261522FD45D90063CDD3 /* ViewController.swift */; };
 		5477261922FD45D90063CDD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5477261722FD45D90063CDD3 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		54368BE4230BE97500233C71 /* OnBoardCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardCollectionViewController.swift; sourceTree = "<group>"; };
+		54368BE8230BEC8400233C71 /* OnBoardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardCell.swift; sourceTree = "<group>"; };
 		5477261022FD45D90063CDD3 /* YMLApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YMLApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5477261322FD45D90063CDD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5477261522FD45D90063CDD3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +64,8 @@
 				5477261A22FD45DA0063CDD3 /* Assets.xcassets */,
 				5477261C22FD45DA0063CDD3 /* LaunchScreen.storyboard */,
 				5477261F22FD45DA0063CDD3 /* Info.plist */,
+				54368BE4230BE97500233C71 /* OnBoardCollectionViewController.swift */,
+				54368BE8230BEC8400233C71 /* OnBoardCell.swift */,
 			);
 			path = YMLApp;
 			sourceTree = "<group>";
@@ -136,7 +142,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5477261622FD45D90063CDD3 /* ViewController.swift in Sources */,
+				54368BE9230BEC8400233C71 /* OnBoardCell.swift in Sources */,
 				5477261422FD45D90063CDD3 /* AppDelegate.swift in Sources */,
+				54368BE5230BE97500233C71 /* OnBoardCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
