@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="74px" viewBox="0 0 44 74" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <polyline id="Path" stroke="#0E0E0E" stroke-width="3" fill-rule="nonzero" points="22 3 22 71 3 53.3378687"></polyline>
+        <path d="M41,71 L22,53" id="Path" stroke="#0E0E0E" stroke-width="3" fill-rule="nonzero" transform="translate(31.500000, 62.000000) scale(-1, 1) translate(-31.500000, -62.000000) "></path>
+    </g>
+</svg>
