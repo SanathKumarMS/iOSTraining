@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class OnBoardCollectionViewController: UICollectionViewController {
+class OnBoardCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var imageNames = ["mobile-70", "home-depot-mobile", "home-mob", "molekule-mobile2"]
     var titles = ["State Farm", "The Home Depot", "PayPal", "Molekule"]
@@ -18,6 +18,7 @@ class OnBoardCollectionViewController: UICollectionViewController {
     var logoNames = ["state-farm-logo", "thd-logo-1", "paypal-logo", "molekule"]
 
     override func viewDidLoad() {
+        collectionView.isPagingEnabled = true
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
@@ -65,6 +66,14 @@ class OnBoardCollectionViewController: UICollectionViewController {
     
         return cell!
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return collectionView.bounds.size // to return cell  size as same as CV
+    }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
+//        return CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+//    }
 
     // MARK: UICollectionViewDelegate
 
