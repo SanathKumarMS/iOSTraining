@@ -13,11 +13,17 @@ class MainScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var getStartedButton: UIButton!
+
+    @IBOutlet weak var pageIndicator: UIPageControl!
     
     var imageNames = ["", "mobile-70", "home-depot-mobile", "home-mob", "molekule-mobile2"]
     var titles = ["Hello", "State Farm", "The Home Depot", "PayPal", "Molekule"]
     var descriptions = ["We are a design and innovation agency, creating digital products and experiences that have a lasting impact.","All things insurance, all things banking, all in one app.","The ultimate power tool: A best-in-class digital experience for The Home Depot.","Payment giant goes mobile-by-design.","The world's first intelligent air purifier, & the app putting clean air in people's hands." ]
-    var logoNames = ["","state-farm-logo", "thd-logo-1", "paypal-logo", "molekule"]
+    var logoNames = ["","4logo", "2logo", "3logo", "1logo"]
+    
+    var count = 0
+    
+    var firstCell: UICollectionViewCell!
     
 
     override func viewDidLoad() {
@@ -26,7 +32,7 @@ class MainScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         setupUI()
-        // Do any additional setup after loading the view.
+        configurePageControl()
     }
     
     func setupUI(){
@@ -38,6 +44,15 @@ class MainScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         //getStartedButton.contentEdgeInsets = UIEdgeInsets(top: 5,left: 5,bottom: 5,right: 5)
     }
     
+    func configurePageControl()
+    {
+        self.pageIndicator.numberOfPages = titles.count
+        self.pageIndicator.currentPage = 0
+        self.pageIndicator.tintColor = UIColor.red
+        self.pageIndicator.pageIndicatorTintColor = .gray
+        self.pageIndicator.currentPageIndicatorTintColor = .black
+        self.view.addSubview(pageIndicator)
+    }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -50,32 +65,38 @@ class MainScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? MainScreenCell
-        print(indexPath.row)
-//        if indexPath.row == 0{
-//            cell?.imageView.image = nil
-//            cell?.titleLabel.text = titles[indexPath.row]
-//            cell?.titleLabel.font = UIFont.systemFont(ofSize: 28)
-//            cell?.logo.image = nil
-//            cell?.descriptionLabel.text = descriptions[indexPath.row]
-//            cell?.descriptionLabel.font = UIFont.systemFont(ofSize: 26)
+        
+        
+        cell?.imageView.image = UIImage(named: imageNames[indexPath.row])
+        cell?.titleLabel.text = titles[indexPath.row]
+        cell?.titleLabel.sizeToFit()
+        //cell?.titleLabel.font = UIFont(name: "sailecbold", size: 24.0)
+        cell?.logo.image = UIImage(named: logoNames[indexPath.row])
+        cell?.descriptionLabel.text = descriptions[indexPath.row]
+        //cell?.descriptionLabel.sizeToFit()
+//        if(count == 0){
+//            cell?.titleLabel.font = UIFont.systemFont(ofSize: 34)
+//            count = 1
 //        }
-//        else{
-            //cell?.backgroundColor = .gray
-            cell?.imageView.image = UIImage(named: imageNames[indexPath.row])
-            cell?.titleLabel.text = titles[indexPath.row]
-            cell?.titleLabel.sizeToFit()
-            //cell?.titleLabel.font = UIFont(name: "sailecbold", size: 24.0)
-            cell?.logo.image = UIImage(named: logoNames[indexPath.row])
-            cell?.descriptionLabel.text = descriptions[indexPath.row]
-            cell?.descriptionLabel.sizeToFit()
-        //}
         
         return cell ?? MainScreenCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Index \(indexPath.row)")
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return collectionView.bounds.size // to return cell  size as same as CV
     }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
+        pageIndicator.currentPage = Int(pageNumber)
+        print(scrollView.contentOffset.x)
+    }
+    
+    
     
 				    
 
