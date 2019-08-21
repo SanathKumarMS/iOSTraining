@@ -40,20 +40,28 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="814"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wc8-U8-mZ1">
-                                                    <rect key="frame" x="42" y="243" width="180" height="56"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wc8-U8-mZ1">
+                                                    <rect key="frame" x="42" y="243" width="250" height="56"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="56" id="FI2-PF-CsZ"/>
+                                                        <constraint firstAttribute="width" constant="250" id="fCw-Ew-3La"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gbP-4p-dc3">
-                                                    <rect key="frame" x="38" y="159" width="60" height="48"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gbP-4p-dc3">
+                                                    <rect key="frame" x="38" y="172" width="60" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="0VH-tj-STI"/>
+                                                        <constraint firstAttribute="height" constant="48" id="SpY-Yy-ldt"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nW-Uc-ywz">
-                                                    <rect key="frame" x="44" y="282" width="280" height="144"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nW-Uc-ywz">
+                                                    <rect key="frame" x="44" y="307" width="280" height="165"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="165" id="UpO-PI-iS7"/>
+                                                    </constraints>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Label">
                                                             <attributes>
@@ -65,6 +73,15 @@
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="wc8-U8-mZ1" firstAttribute="top" secondItem="gbP-4p-dc3" secondAttribute="bottom" constant="23" id="3EC-p9-azq"/>
+                                            <constraint firstItem="3nW-Uc-ywz" firstAttribute="top" secondItem="wc8-U8-mZ1" secondAttribute="bottom" constant="8" id="K9I-2y-uFf"/>
+                                            <constraint firstItem="3nW-Uc-ywz" firstAttribute="leading" secondItem="A4T-aF-JzL" secondAttribute="leadingMargin" constant="36" id="LkI-ra-GRT"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="3nW-Uc-ywz" secondAttribute="trailing" constant="82" id="MoI-Qd-RAn"/>
+                                            <constraint firstItem="wc8-U8-mZ1" firstAttribute="leading" secondItem="A4T-aF-JzL" secondAttribute="leadingMargin" constant="34" id="NL7-nG-xad"/>
+                                            <constraint firstItem="gbP-4p-dc3" firstAttribute="leading" secondItem="A4T-aF-JzL" secondAttribute="leadingMargin" constant="30" id="a3U-uT-K9w"/>
+                                            <constraint firstItem="gbP-4p-dc3" firstAttribute="top" secondItem="A4T-aF-JzL" secondAttribute="topMargin" constant="120" id="e07-KO-Cfj"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="descriptionLabel" destination="3nW-Uc-ywz" id="Hwh-14-UeG"/>
                                             <outlet property="imageView" destination="2Mk-st-Dbp" id="jiJ-4Y-NbZ"/>
