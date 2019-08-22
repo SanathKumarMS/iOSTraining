@@ -16,10 +16,13 @@ class MainScreenVC: UIViewController {
 
     @IBOutlet weak var pageIndicator: UIPageControl!
     
-    var imageNames = ["", "mobile-70", "home-depot-mobile", "home-mob", "molekule-mobile2"]
-    var titles = ["Hello", "State Farm", "The Home Depot", "PayPal", "Molekule"]
-    var descriptions = ["We are a design and innovation agency, creating digital products and experiences that have a lasting impact.","All things insurance, all things banking, all in one app.","The ultimate power tool: A best-in-class digital experience for The Home Depot.","Payment giant goes mobile-by-design.","The world's first intelligent air purifier, & the app putting clean air in people's hands." ]
-    var logoNames = ["","4logo", "2logo", "3logo", "1logo"]
+//    var imageNames = ["", "mobile-70", "home-depot-mobile", "home-mob", "molekule-mobile2"]
+//    var titles = ["Hello", "State Farm", "The Home Depot", "PayPal", "Molekule"]
+//    var descriptions = ["We are a design and innovation agency, creating digital products and experiences that have a lasting impact.","All things insurance, all things banking, all in one app.","The ultimate power tool: A best-in-class digital experience for The Home Depot.","Payment giant goes mobile-by-design.","The world's first intelligent air purifier, & the app putting clean air in people's hands." ]
+//    var logoNames = ["","4logo", "2logo", "3logo", "1logo"]
+    
+    var productsInfo: [Product] = []
+    //var a: [Int]
     
 
     override func viewDidLoad() {
@@ -27,6 +30,8 @@ class MainScreenVC: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        setupProductInfo()
         setupUI()
         configurePageControl()
     }
@@ -39,14 +44,28 @@ class MainScreenVC: UIViewController {
     }
     
     //Setup the page control
-    func configurePageControl()
-    {
-        pageIndicator.numberOfPages = titles.count
+    func configurePageControl(){
+        pageIndicator.numberOfPages = productsInfo.count
         pageIndicator.currentPage = 0
         pageIndicator.tintColor = UIColor.red
         pageIndicator.pageIndicatorTintColor = .gray
         pageIndicator.currentPageIndicatorTintColor = .black
         view.addSubview(pageIndicator)
+    }
+    
+    //Initialize the product array which contains information about each of the products
+    func setupProductInfo(){
+        let helloPage = Product(imageName: "", logoName: "", title: "Hello", description: "We are a design and innovation agency, creating digital products and experiences that have a lasting impact.")
+        let stateFarm = Product(imageName: "mobile-70", logoName: "4logo", title: "State Farm", description: "All things insurance, all things banking, all in one app.")
+        let homeDepot = Product(imageName: "home-depot-mobile", logoName: "2logo", title: "The Home Depot", description: "The ultimate power tool: A best-in-class digital experience for The Home Depot.")
+        let paypal = Product(imageName: "home-mob", logoName: "3logo", title: "PayPal", description: "Payment giant goes mobile-by-design.")
+        let molekule = Product(imageName: "molekule-mobile2", logoName: "1logo", title: "Molekule", description: "The world's first intelligent air purifier, & the app putting clean air in people's hands.")
+        
+        productsInfo.append(helloPage)
+        productsInfo.append(stateFarm)
+        productsInfo.append(homeDepot)
+        productsInfo.append(paypal)
+        productsInfo.append(molekule)
     }
     
     
@@ -60,12 +79,12 @@ extension MainScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageNames.count
+        return productsInfo.count
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? MainScreenCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainScreenCell", for: indexPath) as? MainScreenCell
         
         print(indexPath.row)
         print("Item \(indexPath.item)")
@@ -73,18 +92,18 @@ extension MainScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         {
             cell?.imageView.image = nil
             cell?.logo.image = nil
-            cell?.titleLabel.text = titles[indexPath.row]
-            cell?.descriptionLabel.text = descriptions[indexPath.row]
+            cell?.titleLabel.text = productsInfo[indexPath.row].title
+            cell?.descriptionLabel.text = productsInfo[indexPath.row].description
             cell?.titleLabel.font = UIFont.systemFont(ofSize: 18)
             print("First cell")
         }
         else
         {
-            cell?.imageView.image = UIImage(named: imageNames[indexPath.row])
-            cell?.titleLabel.text = titles[indexPath.row]
+            cell?.imageView.image = UIImage(named: productsInfo[indexPath.row].imageName)
+            cell?.titleLabel.text = productsInfo[indexPath.row].title
             cell?.titleLabel.sizeToFit()
-            cell?.logo.image = UIImage(named: logoNames[indexPath.row])
-            cell?.descriptionLabel.text = descriptions[indexPath.row]
+            cell?.logo.image = UIImage(named: productsInfo[indexPath.row].logoName)
+            cell?.descriptionLabel.text = productsInfo[indexPath.row].description
         }
         
         return cell ?? MainScreenCell()
@@ -100,6 +119,18 @@ extension MainScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
 }
 
+struct Product
+{
+    let imageName: String
+    let logoName: String
+    let title: String
+    let description: String
+}
+
+//var a = Product(imageName: "mob", logoName: "state_farm", title: "State Farm", description: "")
+//var b = Product(imageName: "mob", logoName: "state_farm", title: "State Farm", description: "")
+//var c = Product(imageName: "mob", logoName: "state_farm", title: "State Farm", description: "")
+//var d = Product(imageName: "mob", logoName: "state_farm", title: "State Farm", description: "")
 
 
 
