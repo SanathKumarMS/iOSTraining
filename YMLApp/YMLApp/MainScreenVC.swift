@@ -91,7 +91,7 @@ extension MainScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
             cell?.logo.image = nil
             cell?.titleLabel.text = productsInfo[indexPath.row].title
             cell?.descriptionLabel.text = productsInfo[indexPath.row].description
-            cell?.titleLabel.font = UIFont.boldSystemFont(ofSize: 36)
+            cell?.titleLabel.font = UIFont.boldSystemFont(ofSize: 40)
             print("First cell")
         }
  
@@ -132,13 +132,6 @@ struct Product
         return productsInfo
     }
 }
-
-//var a = Product(imageName: "mob", logoName: "state_farm", title: "State Farm", description: "")
-//var b = Product(imageName: "mob", logoName: "state_farm", title: "State Farm", description: "")
-//var c = Product(imageName: "mob", logoName: "state_farm", title: "State Farm", description: "")
-//var d = Product(imageName: "mob", logoName: "state_farm", title: "State Farm", description: "")
-
-
 
 
 
