@@ -88,24 +88,23 @@ extension MainScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         
         print(indexPath.row)
         print("Item \(indexPath.item)")
-        if(indexPath.row == 10)
+        cell?.imageView.image = UIImage(named: productsInfo[indexPath.row].imageName)
+        cell?.titleLabel.text = productsInfo[indexPath.row].title
+        cell?.titleLabel.sizeToFit()
+        cell?.logo.image = UIImage(named: productsInfo[indexPath.row].logoName)
+        cell?.descriptionLabel.text = productsInfo[indexPath.row].description
+        //cell?.titleLabel.font = UIFont.systemFont(ofSize: 30)
+
+        if(indexPath.row == 0)
         {
             cell?.imageView.image = nil
             cell?.logo.image = nil
             cell?.titleLabel.text = productsInfo[indexPath.row].title
             cell?.descriptionLabel.text = productsInfo[indexPath.row].description
-            cell?.titleLabel.font = UIFont.systemFont(ofSize: 18)
+            cell?.titleLabel.font = UIFont.boldSystemFont(ofSize: 36)
             print("First cell")
         }
-        else
-        {
-            cell?.imageView.image = UIImage(named: productsInfo[indexPath.row].imageName)
-            cell?.titleLabel.text = productsInfo[indexPath.row].title
-            cell?.titleLabel.sizeToFit()
-            cell?.logo.image = UIImage(named: productsInfo[indexPath.row].logoName)
-            cell?.descriptionLabel.text = productsInfo[indexPath.row].description
-        }
-        
+ 
         return cell ?? MainScreenCell()
     }
     
@@ -125,6 +124,8 @@ struct Product
     let logoName: String
     let title: String
     let description: String
+    
+
 }
 
 //var a = Product(imageName: "mob", logoName: "state_farm", title: "State Farm", description: "")
