@@ -284,7 +284,7 @@
                                                 <constraint firstItem="gsN-PH-U5j" firstAttribute="top" secondItem="ovb-kO-BnK" secondAttribute="bottom" constant="34" id="rfi-YT-Idn"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="workDescription" destination="j00-g3-M0E" id="mSW-jS-Jq7"/>
                                             <outlet property="workImageView" destination="ovb-kO-BnK" id="g9H-hF-qeF"/>

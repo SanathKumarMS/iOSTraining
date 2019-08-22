@@ -48,7 +48,7 @@ extension WorkVC: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let transitionToVC = self.storyboard?.instantiateViewController(withIdentifier: "WorkWebViewVC") as! WorkWebViewVC
-        transitionToVC.url = URL(string: "https://ymedialabs.com/project/the-north-face")
+        transitionToVC.url = URL(string: workProducts[indexPath.row].getURL())
         self.navigationController?.pushViewController(transitionToVC, animated: true)
     }
     
@@ -59,13 +59,14 @@ struct WorkProduct
     let image: String
     let title: String
     let description: String
+    let url: String
     
     static func getWorkProducts() -> [WorkProduct]{
         var workProducts: [WorkProduct] = []
         
-        let northFace = WorkProduct(image: "north-face-featured-1", title: "THE NORTH FACE", description: "How The North Face redefined loyalty to embrace the great outdoors")
-        let clover = WorkProduct(image: "clover-featured", title: "CLOVER", description: "How Clover Go has become an open ecosystem for point-of-sale payments")
-        let creditOne = WorkProduct(image: "creditone-featured", title: "CREDIT ONE", description: "How Credit One has become America's fastest growing credit card issuer")
+        let northFace = WorkProduct(image: "north-face-featured-1", title: "THE NORTH FACE", description: "How The North Face redefined loyalty to embrace the great outdoors", url: "https://ymedialabs.com/project/the-north-face")
+        let clover = WorkProduct(image: "clover-featured", title: "CLOVER", description: "How Clover Go has become an open ecosystem for point-of-sale payments", url: "https://ymedialabs.com/project/clover")
+        let creditOne = WorkProduct(image: "creditone-featured", title: "CREDIT ONE", description: "How Credit One has become America's fastest growing credit card issuer", url: "https://ymedialabs.com/project/credit-one")
         workProducts.append(northFace)
         workProducts.append(clover)
         workProducts.append(creditOne)
@@ -84,4 +85,9 @@ struct WorkProduct
     func getDescription() -> String{
         return description
     }
+    
+    func getURL() -> String{
+        return url
+    }
+    
 }

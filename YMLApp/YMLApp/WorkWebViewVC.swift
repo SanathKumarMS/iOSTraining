@@ -18,7 +18,7 @@ class WorkWebViewVC: UIViewController, WKNavigationDelegate {
         super.viewDidLoad()
 
         
-        let url = URL(string: "https://ioscreator.com")!
+        //let url = URL(string: "https://ioscreator.com")!
         webView.load(URLRequest(url: url))
     }
     
