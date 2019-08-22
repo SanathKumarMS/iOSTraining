@@ -10,15 +10,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main Screen-->
+        <!--Main ScreenVC-->
         <scene sceneID="c2J-d9-UxJ">
             <objects>
-                <viewController id="1bT-ew-Y7T" customClass="MainScreen" customModule="YMLApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1bT-ew-Y7T" customClass="MainScreenVC" customModule="YMLApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yJ0-8m-aK0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gmF-jP-4ma">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gmF-jP-4ma">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -40,10 +40,9 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="814"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wc8-U8-mZ1">
-                                                    <rect key="frame" x="42" y="243" width="250" height="56"/>
+                                                    <rect key="frame" x="42" y="243" width="66.5" height="56"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="56" id="FI2-PF-CsZ"/>
-                                                        <constraint firstAttribute="width" constant="250" id="fCw-Ew-3La"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                                     <nil key="textColor"/>
@@ -75,11 +74,13 @@
                                         <constraints>
                                             <constraint firstItem="wc8-U8-mZ1" firstAttribute="top" secondItem="gbP-4p-dc3" secondAttribute="bottom" constant="23" id="3EC-p9-azq"/>
                                             <constraint firstItem="3nW-Uc-ywz" firstAttribute="leading" secondItem="A4T-aF-JzL" secondAttribute="leadingMargin" constant="34" id="3TQ-h9-Hbd"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wc8-U8-mZ1" secondAttribute="trailing" symbolic="YES" id="4Ha-5G-dVm"/>
                                             <constraint firstItem="wc8-U8-mZ1" firstAttribute="leading" secondItem="A4T-aF-JzL" secondAttribute="leadingMargin" constant="34" id="NL7-nG-xad"/>
                                             <constraint firstItem="gbP-4p-dc3" firstAttribute="leading" secondItem="A4T-aF-JzL" secondAttribute="leadingMargin" constant="30" id="a3U-uT-K9w"/>
                                             <constraint firstAttribute="trailing" secondItem="2Mk-st-Dbp" secondAttribute="trailing" id="aFU-Qa-s8i"/>
                                             <constraint firstItem="gbP-4p-dc3" firstAttribute="top" secondItem="A4T-aF-JzL" secondAttribute="topMargin" constant="120" id="e07-KO-Cfj"/>
                                             <constraint firstItem="2Mk-st-Dbp" firstAttribute="leading" secondItem="A4T-aF-JzL" secondAttribute="leading" id="hF9-G7-Ts2"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3nW-Uc-ywz" secondAttribute="trailing" symbolic="YES" id="htj-AT-ftb"/>
                                             <constraint firstAttribute="bottom" secondItem="2Mk-st-Dbp" secondAttribute="bottom" id="kJS-IB-8Ry"/>
                                             <constraint firstItem="2Mk-st-Dbp" firstAttribute="top" secondItem="A4T-aF-JzL" secondAttribute="top" id="oHP-lV-jLp"/>
                                             <constraint firstItem="3nW-Uc-ywz" firstAttribute="top" secondItem="wc8-U8-mZ1" secondAttribute="bottom" constant="20" id="s70-wJ-8EC"/>
@@ -165,7 +166,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="BVQ-Xr-9nj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="About" id="rQi-JK-lkJ"/>
+                    <tabBarItem key="tabBarItem" title="About" image="icon_about_us" id="rQi-JK-lkJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lFA-PQ-EBn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -181,13 +182,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="v7v-jo-4a1"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="News" id="aqp-Ri-TrG"/>
+                    <tabBarItem key="tabBarItem" title="News" image="icon_news" id="aqp-Ri-TrG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hti-mT-uzQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2264" y="911"/>
         </scene>
-        <!--Career-->
+        <!--Careers-->
         <scene sceneID="Xse-C1-NWo">
             <objects>
                 <viewController id="pz0-kh-EOk" sceneMemberID="viewController">
@@ -197,13 +198,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="eKE-fc-1Xu"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Career" id="iOA-qq-oKV"/>
+                    <tabBarItem key="tabBarItem" title="Careers" image="icon_carrers" id="iOA-qq-oKV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rBj-wg-vOt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3043" y="911"/>
         </scene>
-        <!--Contact-->
+        <!--Contact Us-->
         <scene sceneID="Jyz-X0-5Gj">
             <objects>
                 <viewController id="WSs-NB-JTd" sceneMemberID="viewController">
@@ -213,7 +214,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="vpT-Hz-KXU"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Contact" id="F8b-m5-9PS"/>
+                    <tabBarItem key="tabBarItem" title="Contact Us" image="icon_contact_us" id="F8b-m5-9PS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5kg-RK-mVB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -229,7 +230,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="977-bA-iVa"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Work" id="jcH-RJ-VwC"/>
+                    <tabBarItem key="tabBarItem" title="Work" image="icon_work" id="jcH-RJ-VwC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XhM-sT-M9g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -260,5 +261,10 @@
     </scenes>
     <resources>
         <image name="31880471_60x60" width="20" height="20"/>
+        <image name="icon_about_us" width="16.666666030883789" height="16.666666030883789"/>
+        <image name="icon_carrers" width="16.666666030883789" height="16.666666030883789"/>
+        <image name="icon_contact_us" width="16.666666030883789" height="16.666666030883789"/>
+        <image name="icon_news" width="16.666666030883789" height="16.666666030883789"/>
+        <image name="icon_work" width="16.666666030883789" height="16.666666030883789"/>
     </resources>
 </document>

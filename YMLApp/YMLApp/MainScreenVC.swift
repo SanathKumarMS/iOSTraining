@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainScreen: UIViewController {
+class MainScreenVC: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -25,15 +25,15 @@ class MainScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.dataSource = self
         setupUI()
         configurePageControl()
     }
     
     //Setup the UI
     func setupUI(){
-        self.collectionView.isPagingEnabled = true
+        collectionView.isPagingEnabled = true
         getStartedButton.layer.borderWidth = 2
         getStartedButton.layer.borderColor = UIColor.black.cgColor
     }
@@ -41,19 +41,19 @@ class MainScreen: UIViewController {
     //Setup the page control
     func configurePageControl()
     {
-        self.pageIndicator.numberOfPages = titles.count
-        self.pageIndicator.currentPage = 0
-        self.pageIndicator.tintColor = UIColor.red
-        self.pageIndicator.pageIndicatorTintColor = .gray
-        self.pageIndicator.currentPageIndicatorTintColor = .black
-        self.view.addSubview(pageIndicator)
+        pageIndicator.numberOfPages = titles.count
+        pageIndicator.currentPage = 0
+        pageIndicator.tintColor = UIColor.red
+        pageIndicator.pageIndicatorTintColor = .gray
+        pageIndicator.currentPageIndicatorTintColor = .black
+        view.addSubview(pageIndicator)
     }
     
     
 }
 
 
-extension MainScreen: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate{
+extension MainScreenVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate{
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
