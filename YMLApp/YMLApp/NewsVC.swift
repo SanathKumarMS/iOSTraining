@@ -50,8 +50,7 @@ extension NewsVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: "NewsTVCell"), for: indexPath) as? NewsTVCell
         
-        //cell?.textLabel?.text = "Testing"
-        cell?.newsImageView.image = news[indexPath.row].getImage()
+        cell?.newsImageView.image = UIImage(named: news[indexPath.row].getImage())
         cell?.newsCategory.text = news[indexPath.row].getCategory().uppercased()
         cell?.newsCategory.textColor = UIColor.lightGray
         cell?.newsDescription.text = news[indexPath.row].getDescription()
@@ -78,14 +77,8 @@ class News
         self.url = url
     }
     
-    func getImage() -> UIImage?{
-        guard let url = URL(string: image) else { return nil }
-        if let data = try? Data(contentsOf: url)
-        {
-            let image: UIImage = UIImage(data: data) ?? UIImage()
-            return image
-        }
-        return UIImage()
+    func getImage() -> String{
+        return image
     }
     
     func getCategory() -> String{
@@ -98,9 +91,9 @@ class News
     
     static func getFeatured() -> [News]{
         var featured : [News] = []
-        let adam = News(image: "https://ymedialabs.com/wp-content/uploads/2019/08/adam_talcott_hero.jpg", category: "AGENCY / CULTURE / UNDEFINED / UNCATEGORIZED", description: "Getting to Know: Adam Talcott – Software Engineering Manager at YML", url: "")
-        let oneway = News(image: "https://ymedialabs.com/wp-content/uploads/2019/07/choice-oneway-header.jpg", category: "Customer Experience", description: "Stuck in the “Paradox of Choice”? Use Recommendations to Build Better CX", url: "")
-        let cfo = News(image: "https://ymedialabs.com/wp-content/uploads/2019/07/hamish-long.jpg", category: "Agency / Culture / undefined", description: "Getting to Know Hamish Macphail — Chief Financial Officer at Y Media Labs", url: "")
+        let adam = News(image: "featured1", category: "AGENCY / CULTURE / UNDEFINED / UNCATEGORIZED", description: "Getting to Know: Adam Talcott – Software Engineering Manager at YML", url: "")
+        let oneway = News(image: "featured2", category: "Customer Experience", description: "Stuck in the “Paradox of Choice”? Use Recommendations to Build Better CX", url: "")
+        let cfo = News(image: "featured3", category: "Agency / Culture / undefined", description: "Getting to Know Hamish Macphail — Chief Financial Officer at Y Media Labs", url: "")
         
         featured.append(adam)
         featured.append(oneway)
@@ -111,8 +104,8 @@ class News
     
     static func getDesign() -> [News]{
         var designs : [News] = []
-        let mcd = News(image: "https://ymedialabs.com/wp-content/uploads/2019/07/mcdonalds-lead.jpeg", category: "Agency / Culture / Design / Leadership / Technology", description: "We Are People: What it Means to Have a People-First Approach", url: "")
-        let ux = News(image: "https://ymedialabs.com/wp-content/uploads/2019/07/1_CpkmgfGBP59ieX6t6dT2wA.png", category: "Design / Technology", description: "Speaking the Same Language: How UX and Data Strategy Can Work Together to Design for Voice-Based AI", url: "")
+        let mcd = News(image: "design1", category: "Agency / Culture / Design / Leadership / Technology", description: "We Are People: What it Means to Have a People-First Approach", url: "")
+        let ux = News(image: "design2", category: "Design / Technology", description: "Speaking the Same Language: How UX and Data Strategy Can Work Together to Design for Voice-Based AI", url: "")
         
         designs.append(mcd)
         designs.append(ux)
@@ -121,8 +114,8 @@ class News
     }
     static func getEbooks() -> [News]{
         var ebooks : [News] = []
-        let chatbots = News(image: "https://ymedialabs.com/wp-content/uploads/2017/04/CHATBOTS3-1.jpg", category: "Ebooks", description: "Chatbots in the Banking Industry – Discussing a More Efficient Future", url: "")
-        let app = News(image: "https://ymedialabs.com/wp-content/uploads/2017/04/hybrid-native_700-1.jpg", category: "Ebooks", description: "How to Choose Wisely Between a Native and a Hybrid Application", url: "")
+        let chatbots = News(image: "ebooks1", category: "Ebooks", description: "Chatbots in the Banking Industry – Discussing a More Efficient Future", url: "")
+        let app = News(image: "ebook2", category: "Ebooks", description: "How to Choose Wisely Between a Native and a Hybrid Application", url: "")
         
         ebooks.append(chatbots)
         ebooks.append(app)
@@ -131,20 +124,3 @@ class News
     }
 }
 
-//class Featured: News
-//{
-//    static func getFeatured() -> [Featured]
-//    {
-//        var featured: [Featured] = []
-//
-//        let adam = Featured(image: "", category: "AGENCY/CULTURE/UNDEFINED/UNCATEGORIZED", description: "Getting to Know: Adam Talcott – Software Engineering Manager at YML", url: "")
-//        let oneway = Featured(image: "", category: "Customer Experience", description: "Stuck in the “Paradox of Choice”? Use Recommendations to Build Better CX", url: "")
-//        let cfo = Featured(image: "", category: "Agency / Culture / undefined", description: "Getting to Know Hamish Macphail — Chief Financial Officer at Y Media Labs", url: "")
-//
-//        featured.append(adam)
-//        featured.append(oneway)
-//        featured.append(cfo)
-//
-//        return featured
-//    }
-//}
