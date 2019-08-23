@@ -19,6 +19,8 @@ class NewsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         news = News.getFeatured()
+        tableView.separatorStyle = .singleLine
+        tableView.separatorColor = .black
         
     }
     
@@ -65,6 +67,7 @@ extension NewsVC: UITableViewDelegate, UITableViewDataSource{
             self.navigationController?.pushViewController(newWebViewVC, animated: true)
         }
     }
+    
     
 }
 
