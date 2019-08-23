@@ -25,14 +25,11 @@ class NewsVC: UIViewController {
     @IBAction func indexChanged(_ sender: Any) {
         switch segmentedControl.selectedSegmentIndex
         {
-        case 0: tableView.backgroundColor = .gray
-                news = News.getFeatured()
+        case 0: news = News.getFeatured()
                 tableView.reloadData()
-        case 1: tableView.backgroundColor = .red
-                news = News.getDesign()
+        case 1: news = News.getDesign()
                 tableView.reloadData()
-        case 2: tableView.backgroundColor = .green
-                news = News.getEbooks()
+        case 2: news = News.getEbooks()
                 tableView.reloadData()
         default: break
         }
