@@ -28,8 +28,8 @@ class WorkWebViewVC: UIViewController, WKNavigationDelegate {
         view = webView
     }
     
-//    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-//        title = webView.title
-//    }
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        title = webView.title
+    }
 
 }

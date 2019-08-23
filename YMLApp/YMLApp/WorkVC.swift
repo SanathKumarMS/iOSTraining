@@ -39,6 +39,7 @@ extension WorkVC: UITableViewDataSource, UITableViewDelegate{
         cell?.workTitle.font = UIFont.boldSystemFont(ofSize: 20)
         cell?.workDescription.text = workProducts[indexPath.row].getDescription()
         cell?.workDescription.font = UIFont.systemFont(ofSize: 40)
+        cell?.selectionStyle = .none
         return cell ?? WorkTVCell()
     }
     
@@ -47,9 +48,11 @@ extension WorkVC: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let transitionToVC = self.storyboard?.instantiateViewController(withIdentifier: "WorkWebViewVC") as! WorkWebViewVC
+        tableView.deselectRow(at: indexPath, animated: false)
+        let transitionToVC = self.storyboard?.instantiateViewController(withIdentifier: String(describing: "WorkWebViewVC")) as! WorkWebViewVC
         transitionToVC.url = URL(string: workProducts[indexPath.row].getURL())
         self.navigationController?.pushViewController(transitionToVC, animated: true)
+        
     }
     
 }
