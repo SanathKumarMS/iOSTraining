@@ -49,9 +49,10 @@ extension WorkVC: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        let transitionToVC = self.storyboard?.instantiateViewController(withIdentifier: String(describing: "WorkWebViewVC")) as! WorkWebViewVC
-        transitionToVC.url = URL(string: workProducts[indexPath.row].getURL())
-        self.navigationController?.pushViewController(transitionToVC, animated: true)
+        if let workWebViewVC = self.storyboard?.instantiateViewController(withIdentifier: String(describing: "WorkWebViewVC")) as? WorkWebViewVC{
+            workWebViewVC.url = URL(string: workProducts[indexPath.row].getURL())
+            self.navigationController?.pushViewController(workWebViewVC, animated: true)
+        }
         
     }
     
@@ -92,5 +93,4 @@ struct WorkProduct
     func getURL() -> String{
         return url
     }
-    
 }
