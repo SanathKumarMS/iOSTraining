@@ -26,13 +26,11 @@ class NewsVC: UIViewController {
         switch segmentedControl.selectedSegmentIndex
         {
         case 0: news = News.getFeatured()
-                tableView.reloadData()
         case 1: news = News.getDesign()
-                tableView.reloadData()
         case 2: news = News.getEbooks()
-                tableView.reloadData()
         default: break
         }
+        tableView.reloadData()
     }
     
 
@@ -58,6 +56,16 @@ extension NewsVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.bounds.height
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        if let newWebViewVC = self.storyboard?.instantiateViewController(withIdentifier: String(describing: NewsWebViewVC.self)) as? NewsWebViewVC
+        {
+            newWebViewVC.url = URL(string: news[indexPath.row].getURL())
+            self.navigationController?.pushViewController(newWebViewVC, animated: true)
+        }
+    }
+    
 }
 
 class News
@@ -86,36 +94,36 @@ class News
         return description
     }
     
+    func getURL() -> String{
+        return url
+    }
+    
     static func getFeatured() -> [News]{
         var featured : [News] = []
-        let adam = News(image: "featured1", category: "AGENCY / CULTURE / UNDEFINED / UNCATEGORIZED", description: "Getting to Know: Adam Talcott – Software Engineering Manager at YML", url: "")
-        let oneway = News(image: "featured2", category: "Customer Experience", description: "Stuck in the “Paradox of Choice”? Use Recommendations to Build Better CX", url: "")
-        let cfo = News(image: "featured3", category: "Agency / Culture / undefined", description: "Getting to Know Hamish Macphail — Chief Financial Officer at Y Media Labs", url: "")
+        let adam = News(image: "featured1", category: "AGENCY / CULTURE / UNDEFINED / UNCATEGORIZED", description: "Getting to Know: Adam Talcott – Software Engineering Manager at YML", url: "https://ymedialabs.com/getting-to-know-adam-talcott")
+        let oneway = News(image: "featured2", category: "Customer Experience", description: "Stuck in the “Paradox of Choice”? Use Recommendations to Build Better CX", url: "https://ymedialabs.com/recommendations-improve-customer-experience")
+        let cfo = News(image: "featured3", category: "Agency / Culture / undefined", description: "Getting to Know Hamish Macphail — Chief Financial Officer at Y Media Labs", url: "https://ymedialabs.com/getting-to-know-hamish-macphail-chief-financial-officer-at-y-media-labs")
         
-        featured.append(adam)
-        featured.append(oneway)
-        featured.append(cfo)
+        featured.append(contentsOf: [adam,oneway,cfo])
         
         return featured
     }
     
     static func getDesign() -> [News]{
         var designs : [News] = []
-        let mcd = News(image: "design1", category: "Agency / Culture / Design / Leadership / Technology", description: "We Are People: What it Means to Have a People-First Approach", url: "")
-        let ux = News(image: "design2", category: "Design / Technology", description: "Speaking the Same Language: How UX and Data Strategy Can Work Together to Design for Voice-Based AI", url: "")
-        
-        designs.append(mcd)
-        designs.append(ux)
+        let mcd = News(image: "design1", category: "Agency / Culture / Design / Leadership / Technology", description: "We Are People: What it Means to Have a People-First Approach", url: "https://ymedialabs.com/we-are-people-what-it-means-to-have-a-people-first-approach")
+        let ux = News(image: "design2", category: "Design / Technology", description: "Speaking the Same Language: How UX and Data Strategy Can Work Together to Design for Voice-Based AI", url: "https://ymedialabs.com/recommendations-improve-customer-experience")
+
+        designs.append(contentsOf: [mcd,ux])
         
         return designs
     }
     static func getEbooks() -> [News]{
         var ebooks : [News] = []
-        let chatbots = News(image: "ebooks1", category: "Ebooks", description: "Chatbots in the Banking Industry – Discussing a More Efficient Future", url: "")
-        let app = News(image: "ebook2", category: "Ebooks", description: "How to Choose Wisely Between a Native and a Hybrid Application", url: "")
+        let chatbots = News(image: "ebooks1", category: "Ebooks", description: "Chatbots in the Banking Industry – Discussing a More Efficient Future", url: "https://ymedialabs.com/chatbots-banking-industry-white-paper")
+        let app = News(image: "ebook2", category: "Ebooks", description: "How to Choose Wisely Between a Native and a Hybrid Application", url: "https://ymedialabs.com/native-hybrid-application-ebook")
         
-        ebooks.append(chatbots)
-        ebooks.append(app)
+        ebooks.append(contentsOf: [chatbots,app])
         
         return ebooks
     }
