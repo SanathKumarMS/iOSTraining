@@ -52,6 +52,7 @@ extension NewsVC: UITableViewDelegate, UITableViewDataSource{
         cell?.newsCategory.textColor = UIColor.lightGray
         cell?.newsDescription.text = news[indexPath.row].getDescription()
         cell?.newsDescription.font = UIFont.systemFont(ofSize: 40)
+        cell?.newsDescription.adjustsFontSizeToFitWidth = true
         return cell ?? NewsTVCell()
     }
     
