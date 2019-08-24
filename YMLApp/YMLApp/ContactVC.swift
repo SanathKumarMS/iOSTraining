@@ -88,6 +88,8 @@ class ContactVC: UIViewController {
             {
                 googleMapsVC.latitude = Double(SVlat)
                 googleMapsVC.longitude = Double(SVlong)
+                googleMapsVC.marker.title = "California"
+                googleMapsVC.marker.snippet = "USA"
                 self.navigationController?.pushViewController(googleMapsVC, animated: true)
             }
         }
@@ -96,6 +98,8 @@ class ContactVC: UIViewController {
             {
                 googleMapsVC.latitude = Double(BangaloreLat)
                 googleMapsVC.longitude = Double(BangaloreLong)
+                googleMapsVC.marker.title = "Bangalore"
+                googleMapsVC.marker.snippet = "India"
                 self.navigationController?.pushViewController(googleMapsVC, animated: true)
             }
         }
