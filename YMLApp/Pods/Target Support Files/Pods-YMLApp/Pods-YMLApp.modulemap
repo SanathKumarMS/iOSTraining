@@ -1,0 +1,6 @@
+framework module Pods_YMLApp {
+  umbrella header "Pods-YMLApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

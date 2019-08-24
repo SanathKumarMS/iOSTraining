@@ -12,12 +12,13 @@ class ContactVC: UIViewController {
 
     @IBOutlet weak var mailLabel: UILabel!
     @IBOutlet weak var contactLabel: UILabel!
+//    @IBOutlet weak var locationLabel1: UILabel!
+//    @IBOutlet weak var locationLabel2: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         addTapGestures()
-        // Do any additional setup after loading the view.
     }
     
     func addTapGestures(){
@@ -52,9 +53,9 @@ class ContactVC: UIViewController {
     
     @objc func showCallAlert(_ sender: UITapGestureRecognizer){
         let phoneNumber = contactLabel.text ?? "invalid number"
-        if let phoneURL = NSURL(string: ("tel://\(phoneNumber)")) {
-            
-            let alert = UIAlertController(title: ("Call " + "8152024536" + "?"), message: nil, preferredStyle: .alert)
+        if let phoneURL = URL(string: ("tel://\(phoneNumber)")) {
+            print(UIApplication.shared.canOpenURL(phoneURL))
+            let alert = UIAlertController(title: ("Call \(phoneNumber)"), message: nil, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Call", style: .default, handler: { (action) in
                 UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
             }))

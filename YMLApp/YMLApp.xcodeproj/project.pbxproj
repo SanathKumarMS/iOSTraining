@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4166D0E268171A3E902E6898 /* Pods_YMLApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8922655753214A1C5A1BD5 /* Pods_YMLApp.framework */; };
 		54368BEB230D062F00233C71 /* MainScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54368BEA230D062F00233C71 /* MainScreenVC.swift */; };
 		54368BED230D199B00233C71 /* MainScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54368BEC230D199B00233C71 /* MainScreenCell.swift */; };
 		54368BF1230E50D600233C71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54368BF0230E50D600233C71 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 		54368C01230FE5D400233C71 /* NewsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54368C00230FE5D400233C71 /* NewsTVCell.swift */; };
 		54368C0323102B8900233C71 /* NewsWebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54368C0223102B8900233C71 /* NewsWebViewVC.swift */; };
 		54368C052310FD7800233C71 /* ContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54368C042310FD7800233C71 /* ContactVC.swift */; };
+		54368C072311511D00233C71 /* GoogleMapsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54368C062311511D00233C71 /* GoogleMapsVC.swift */; };
 		5477261422FD45D90063CDD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5477261322FD45D90063CDD3 /* AppDelegate.swift */; };
 		5477261922FD45D90063CDD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5477261722FD45D90063CDD3 /* Main.storyboard */; };
 		5477261E22FD45DA0063CDD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5477261C22FD45DA0063CDD3 /* LaunchScreen.storyboard */; };
@@ -33,11 +35,15 @@
 		54368C00230FE5D400233C71 /* NewsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTVCell.swift; sourceTree = "<group>"; };
 		54368C0223102B8900233C71 /* NewsWebViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsWebViewVC.swift; sourceTree = "<group>"; };
 		54368C042310FD7800233C71 /* ContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactVC.swift; sourceTree = "<group>"; };
+		54368C062311511D00233C71 /* GoogleMapsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsVC.swift; sourceTree = "<group>"; };
+		5449BEAA61235C0163E33210 /* Pods-YMLApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YMLApp.debug.xcconfig"; path = "Target Support Files/Pods-YMLApp/Pods-YMLApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5477261022FD45D90063CDD3 /* YMLApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YMLApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5477261322FD45D90063CDD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5477261822FD45D90063CDD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5477261D22FD45DA0063CDD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5477261F22FD45DA0063CDD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA8922655753214A1C5A1BD5 /* Pods_YMLApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YMLApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFE50FFA38E1F3E9A2191861 /* Pods-YMLApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YMLApp.release.xcconfig"; path = "Target Support Files/Pods-YMLApp/Pods-YMLApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4166D0E268171A3E902E6898 /* Pods_YMLApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +63,8 @@
 			children = (
 				5477261222FD45D90063CDD3 /* YMLApp */,
 				5477261122FD45D90063CDD3 /* Products */,
+				DE501164457EABF3C085EDF0 /* Pods */,
+				E6BE00FDEA06433A1570F4B7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,8 +93,26 @@
 				54368C00230FE5D400233C71 /* NewsTVCell.swift */,
 				54368C0223102B8900233C71 /* NewsWebViewVC.swift */,
 				54368C042310FD7800233C71 /* ContactVC.swift */,
+				54368C062311511D00233C71 /* GoogleMapsVC.swift */,
 			);
 			path = YMLApp;
+			sourceTree = "<group>";
+		};
+		DE501164457EABF3C085EDF0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5449BEAA61235C0163E33210 /* Pods-YMLApp.debug.xcconfig */,
+				BFE50FFA38E1F3E9A2191861 /* Pods-YMLApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E6BE00FDEA06433A1570F4B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA8922655753214A1C5A1BD5 /* Pods_YMLApp.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,9 +122,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5477262222FD45DA0063CDD3 /* Build configuration list for PBXNativeTarget "YMLApp" */;
 			buildPhases = (
+				9E7137AF7A815AF03AD09181 /* [CP] Check Pods Manifest.lock */,
 				5477260C22FD45D90063CDD3 /* Sources */,
 				5477260D22FD45D90063CDD3 /* Frameworks */,
 				5477260E22FD45D90063CDD3 /* Resources */,
+				2A17523C6541B5BB53FD11A6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -154,6 +183,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2A17523C6541B5BB53FD11A6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YMLApp/Pods-YMLApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YMLApp/Pods-YMLApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YMLApp/Pods-YMLApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E7137AF7A815AF03AD09181 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YMLApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5477260C22FD45D90063CDD3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -163,6 +234,7 @@
 				54368BFD230EDB4E00233C71 /* WorkWebViewVC.swift in Sources */,
 				54368C01230FE5D400233C71 /* NewsTVCell.swift in Sources */,
 				54368BEB230D062F00233C71 /* MainScreenVC.swift in Sources */,
+				54368C072311511D00233C71 /* GoogleMapsVC.swift in Sources */,
 				54368C0323102B8900233C71 /* NewsWebViewVC.swift in Sources */,
 				54368BFF230FCC5F00233C71 /* NewsVC.swift in Sources */,
 				5477261422FD45D90063CDD3 /* AppDelegate.swift in Sources */,
@@ -312,6 +384,7 @@
 		};
 		5477262322FD45DA0063CDD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5449BEAA61235C0163E33210 /* Pods-YMLApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -329,6 +402,7 @@
 		};
 		5477262422FD45DA0063CDD3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFE50FFA38E1F3E9A2191861 /* Pods-YMLApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

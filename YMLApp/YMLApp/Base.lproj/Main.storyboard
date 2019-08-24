@@ -424,6 +424,14 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTE-mS-i4E">
+                                <rect key="frame" x="174" y="734" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="D2c-sQ-bgf" kind="show" id="k3w-WS-qWl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -452,6 +460,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5kg-RK-mVB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3908.6956521739135" y="908.70535714285711"/>
+        </scene>
+        <!--Delegate-->
+        <scene sceneID="AfC-rh-kIy">
+            <objects>
+                <viewController id="D2c-sQ-bgf" customClass="GoogleMapsVC" customModule="YMLApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EUk-ZP-C70" customClass="GMSMapView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="yfk-p4-pUc"/>
+                        <connections>
+                            <outlet property="delegate" destination="D2c-sQ-bgf" id="nzM-UE-PAB"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="EUk-ZP-C70" id="npV-0f-ocH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fxf-XB-aQ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3909" y="1609"/>
         </scene>
         <!--Work-->
         <scene sceneID="YrT-RH-iZk">
