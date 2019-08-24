@@ -12,8 +12,8 @@ import GoogleMaps
 class GoogleMapsVC: UIViewController {
     
     @IBOutlet weak var mapView: GMSMapView!
-    var latitude: Double = 0.0
-    var longitude: Double = 0.0
+    var latitude: Double = 12.9715
+    var longitude: Double = 77.5945
 
     override func viewDidLoad() {
         super.viewDidLoad()

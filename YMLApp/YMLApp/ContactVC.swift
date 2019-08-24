@@ -17,6 +17,10 @@ class ContactVC: UIViewController {
     @IBOutlet weak var locationLabel2: UILabel!
     var locationTapGesture1: UITapGestureRecognizer!
     var locationTapGesture2: UITapGestureRecognizer!
+    var SVlat = 37.524950
+    var SVlong = -122.258507
+    var BangaloreLat = 12.9715
+    var BangaloreLong = 77.5945
     
     var address1 = "255 Shoreline Dr, Redwood City, CA 94065, USA"
     var address2 = "150 Old Airport Road, Diamond District, Tower B, Lower Ground Floor, Kodihalli, Domlur, Bengaluru, Karnataka 560008"
@@ -78,47 +82,57 @@ class ContactVC: UIViewController {
     }
     
     @objc func showLocationOnMaps(_ sender: UITapGestureRecognizer){
-        var searchAddress = ""
+        
         if sender == locationTapGesture1{
-            searchAddress = address1
+            if let googleMapsVC = self.storyboard?.instantiateViewController(withIdentifier: String(describing: GoogleMapsVC.self)) as? GoogleMapsVC
+            {
+                googleMapsVC.latitude = Double(SVlat)
+                googleMapsVC.longitude = Double(SVlong)
+                self.navigationController?.pushViewController(googleMapsVC, animated: true)
+            }
         }
         else{
-            searchAddress = address2
+            if let googleMapsVC = self.storyboard?.instantiateViewController(withIdentifier: String(describing: GoogleMapsVC.self)) as? GoogleMapsVC
+            {
+                googleMapsVC.latitude = Double(BangaloreLat)
+                googleMapsVC.longitude = Double(BangaloreLong)
+                self.navigationController?.pushViewController(googleMapsVC, animated: true)
+            }
         }
-        
-        var components = URLComponents(string: "https://maps.googleapis.com/maps/api/geocode/json")!
-        let key = URLQueryItem(name: "key", value: googleApiKey) // use your key
-        let address = URLQueryItem(name: "address", value: searchAddress)
-        components.queryItems = [key, address]
-
-        let task = URLSession.shared.dataTask(with: components.url!) { data, response, error in
-            guard let data = data, let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, error == nil else {
-                print(String(describing: response))
-                print(String(describing: error))
-                return
-            }
-
-            guard let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: Any] else {
-                print("not JSON format expected")
-                print(String(data: data, encoding: .utf8) ?? "Not string?!?")
-                return
-            }
-
-            guard let results = json["results"] as? [[String: Any]],
-                let status = json["status"] as? String,
-                status == "OK" else {
-                    print("no results")
-                    print(String(describing: json))
-                    return
-            }
-
-//            DispatchQueue.main.async {
-//                // now do something with the results, e.g. grab `formatted_address`:
-//                let strings = results.compactMap { $0["formatted_address"] as? String }
+//
+//        var components = URLComponents(string: "https://maps.googleapis.com/maps/api/geocode/json")!
+//        let key = URLQueryItem(name: "key", value: googleApiKey) // use your key
+//        let address = URLQueryItem(name: "address", value: searchAddress)
+//        components.queryItems = [key, address]
+//
+//        let task = URLSession.shared.dataTask(with: components.url!) { data, response, error in
+//            guard let data = data, let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, error == nil else {
+//                print(String(describing: response))
+//                print(String(describing: error))
+//                return
 //            }
-        }
-
-        task.resume()
+//
+//            guard let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: Any] else {
+//                print("not JSON format expected")
+//                print(String(data: data, encoding: .utf8) ?? "Not string?!?")
+//                return
+//            }
+//
+//            guard let results = json["results"] as? [[String: Any]],
+//                let status = json["status"] as? String,
+//                status == "OK" else {
+//                    print("no results")
+//                    print(String(describing: json))
+//                    return
+//            }
+//
+////            DispatchQueue.main.async {
+////                // now do something with the results, e.g. grab `formatted_address`:
+////                let strings = results.compactMap { $0["formatted_address"] as? String }
+////            }
+//        }
+//
+//        task.resume()
     }
     
 
