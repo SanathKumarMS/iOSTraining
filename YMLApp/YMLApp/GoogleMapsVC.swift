@@ -12,23 +12,21 @@ import GoogleMaps
 class GoogleMapsVC: UIViewController {
     
     @IBOutlet weak var mapView: GMSMapView!
+    var latitude: Double = 0.0
+    var longitude: Double = 0.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let camera: GMSCameraPosition = GMSCameraPosition.camera(withLatitude: 48.857165, longitude: 2.354613, zoom: 8.0)
+        let camera: GMSCameraPosition = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitude, zoom: 5.0)
         mapView.camera = camera
+        
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        marker.title = "Sydney"
+        marker.snippet = "Aus"
+        marker.map = mapView
+        
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

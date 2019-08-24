@@ -393,13 +393,13 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Silicon Valley, CA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N78-2B-HZE">
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Silicon Valley, CA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N78-2B-HZE">
                                         <rect key="frame" x="0.0" y="32.5" width="148.5" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" red="0.067185001120000004" green="0.60217586820000002" blue="0.96075934169999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bangalore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KX9-68-8VM">
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bangalore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KX9-68-8VM">
                                         <rect key="frame" x="0.0" y="62.5" width="88" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" red="0.067185001120000004" green="0.60217586820000002" blue="0.96075934169999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -454,6 +454,8 @@
                     <tabBarItem key="tabBarItem" title="Contact Us" image="icon_contact_us" id="F8b-m5-9PS"/>
                     <connections>
                         <outlet property="contactLabel" destination="6ch-Ti-hjJ" id="fMW-RV-bFr"/>
+                        <outlet property="locationLabel1" destination="N78-2B-HZE" id="lpQ-TC-NDv"/>
+                        <outlet property="locationLabel2" destination="KX9-68-8VM" id="75L-WE-FIO"/>
                         <outlet property="mailLabel" destination="j51-IK-WKH" id="pDR-3P-CQw"/>
                     </connections>
                 </viewController>
