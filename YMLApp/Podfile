@@ -7,5 +7,6 @@ target 'YMLApp' do
 
   # Pods for YMLApp
   pod 'GoogleMaps'
+  pod 'HCVimeoVideoExtractor'
 
 end
