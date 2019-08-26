@@ -16,13 +16,7 @@ class MainScreenVC: UIViewController {
 
     @IBOutlet weak var pageIndicator: UIPageControl!
     
-//    var imageNames = ["", "mobile-70", "home-depot-mobile", "home-mob", "molekule-mobile2"]
-//    var titles = ["Hello", "State Farm", "The Home Depot", "PayPal", "Molekule"]
-//    var descriptions = ["We are a design and innovation agency, creating digital products and experiences that have a lasting impact.","All things insurance, all things banking, all in one app.","The ultimate power tool: A best-in-class digital experience for The Home Depot.","Payment giant goes mobile-by-design.","The world's first intelligent air purifier, & the app putting clean air in people's hands." ]
-//    var logoNames = ["","4logo", "2logo", "3logo", "1logo"]
-    
     var productsInfo: [Product] = []
-    //var a: [Int]
     
 
     override func viewDidLoad() {
@@ -40,7 +34,7 @@ class MainScreenVC: UIViewController {
     func setupUI(){
         collectionView.isPagingEnabled = true
         getStartedButton.layer.borderWidth = 2
-        getStartedButton.layer.borderColor = UIColor.black.cgColor
+        getStartedButton.layer.borderColor = UIColor.gray.cgColor
     }
     
     //Setup the page control
