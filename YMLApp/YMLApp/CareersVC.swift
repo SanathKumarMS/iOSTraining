@@ -42,6 +42,9 @@ class CareersVC: UIViewController {
     }
     
     func playVideo(){
+        videoView.backgroundColor = .white
+        let playPauseTapGesture = UITapGestureRecognizer(target: self, action: #selector(playPauseVideo))
+        videoView.addGestureRecognizer(playPauseTapGesture)
         guard let url = URL(string: "https://vimeo.com/293855154") else{
             print("Invalid url")
             return
@@ -60,11 +63,11 @@ class CareersVC: UIViewController {
             print("Title = \(vid.title), url = \(vid.videoURL), thumbnail = \(vid.thumbnailURL)")
             
             if let videoURL = vid.videoURL[.Quality540p] {
-                let player = AVPlayer(url: videoURL)
-                let playerLayer = AVPlayerLayer(player: player)
+                self.player = AVPlayer(url: videoURL)
+                let playerLayer = AVPlayerLayer(player: self.player)
                 playerLayer.frame = self.videoView.frame
                 self.view.layer.addSublayer(playerLayer)
-                player.play()
+                self.player.play()
                 //                let playerController = AVPlayerViewController()
                 //                playerController.player = player
                 //                self.present(playerController, animated: true) {
@@ -72,6 +75,16 @@ class CareersVC: UIViewController {
                 //                }
             }
         })
+    }
+    
+    @objc func playPauseVideo(_ sender: UITapGestureRecognizer)
+    {
+        if player.rate != 0{
+            player.pause()
+        }
+        else{
+            player.play()
+        }
     }
     
     func loadPositionsFromJson(){
@@ -131,7 +144,7 @@ extension CareersVC: UITableViewDelegate, UITableViewDataSource{
         cell?.positionLabel.text = jsonItems[indexPath.row].position
         cell?.positionLabel.font = UIFont.systemFont(ofSize: 28)
         cell?.locationLabel.text = jsonItems[indexPath.row].location
-        cell?.locationLabel.font = UIFont.systemFont(ofSize: 18)
+        cell?.locationLabel.font = UIFont.systemFont(ofSize: 20)
         
         return cell ?? CareersVCCell()
     }
