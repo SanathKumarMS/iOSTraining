@@ -23,19 +23,22 @@ class CareersVC: UIViewController {
         let location: String
     }
     
+    var jsonItems: [Data] = []
+    
     @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var tableView: UITableView!
     var player: AVPlayer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadPositionsFromJson()
         
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        //playVideo()
-        loadPositionsFromJson()
+        playVideo()
+        
     }
     
     func playVideo(){
@@ -91,7 +94,15 @@ class CareersVC: UIViewController {
                     let root = try JSONDecoder().decode(Root.self, from: data)
                     //print(root)
                     let data = root.data
-                    print(data[0])
+                    self.jsonItems = data
+                    for item in data{
+                        print(item.domain)
+                        print(item.position)
+                        print(item.location)
+                    }
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
                 } catch {
                     print("Error : \(error)")
                 }
@@ -108,12 +119,19 @@ class CareersVC: UIViewController {
 
 extension CareersVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return jsonItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CareersVCCell.self)) as? CareersVCCell
-        cell?.backgroundColor = .lightGray
+        //cell?.backgroundColor = .lightGray
+        cell?.domainLabel.text = jsonItems[indexPath.row].domain
+        cell?.domainLabel.font = UIFont.systemFont(ofSize: 18)
+        cell?.domainLabel.textColor = .lightGray
+        cell?.positionLabel.text = jsonItems[indexPath.row].position
+        cell?.positionLabel.font = UIFont.systemFont(ofSize: 28)
+        cell?.locationLabel.text = jsonItems[indexPath.row].location
+        cell?.locationLabel.font = UIFont.systemFont(ofSize: 18)
         
         return cell ?? CareersVCCell()
     }
