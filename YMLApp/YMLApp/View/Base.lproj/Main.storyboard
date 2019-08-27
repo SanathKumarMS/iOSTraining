@@ -668,10 +668,10 @@
             </objects>
             <point key="canvasLocation" x="505.79710144927537" y="910.71428571428567"/>
         </scene>
-        <!--Work Web ViewVC-->
+        <!--Web ViewVC-->
         <scene sceneID="yrG-GG-qQR">
             <objects>
-                <viewController storyboardIdentifier="WorkWebViewVC" id="edL-Ym-zjE" customClass="WorkWebViewVC" customModule="YMLApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebViewVC" id="edL-Ym-zjE" customClass="WebViewVC" customModule="YMLApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jRA-LW-tIM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

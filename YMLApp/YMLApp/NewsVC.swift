@@ -19,11 +19,11 @@ class NewsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         news = News.getFeatured()
-        tableView.separatorStyle = .singleLine
         tableView.separatorColor = .black
         
     }
     
+    //View Model
     @IBAction func indexChanged(_ sender: Any) {
         switch segmentedControl.selectedSegmentIndex
         {

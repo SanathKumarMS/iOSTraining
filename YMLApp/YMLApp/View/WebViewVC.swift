@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class WorkWebViewVC: UIViewController, WKNavigationDelegate {
+class WebViewVC: UIViewController {
     
     var webView: WKWebView!
     var url: URL!
@@ -26,10 +26,6 @@ class WorkWebViewVC: UIViewController, WKNavigationDelegate {
         webView = WKWebView()
         webView.navigationDelegate = self
         view = webView
-    }
-    
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        title = webView.title
     }
 
 }
