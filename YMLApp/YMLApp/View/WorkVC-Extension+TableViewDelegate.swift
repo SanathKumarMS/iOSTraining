@@ -12,7 +12,7 @@ import UIKit
 extension WorkVC: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.bounds.height
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -23,4 +23,5 @@ extension WorkVC: UITableViewDelegate{
         }
         
     }
+    
 }

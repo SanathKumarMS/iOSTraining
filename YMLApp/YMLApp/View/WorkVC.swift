@@ -17,7 +17,7 @@ class WorkVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.initialize()
+        //viewModel.initialize()
     }
     
 }

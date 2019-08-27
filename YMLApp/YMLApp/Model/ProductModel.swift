@@ -14,4 +14,6 @@ struct Product
     let logoName: String
     let title: String
     let description: String
+    
+    
 }

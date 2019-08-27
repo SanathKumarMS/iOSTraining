@@ -10,7 +10,11 @@ import Foundation
 
 class WorkViewModel{
     
-    var workProducts: [WorkProduct] = []
+    lazy var workProducts: [WorkProduct] = []
+    
+    init() {
+        initialize()
+    }
     
     func initialize(){
         
