@@ -46,7 +46,6 @@ class CareerViewModel{
                         print(item.location)
                     }
                     DispatchQueue.main.async {
-                        //self.tableView.reloadData()
                         compHandler()
                     }
                 } catch {

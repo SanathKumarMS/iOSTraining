@@ -16,7 +16,6 @@
 		54368BFD230EDB4E00233C71 /* WebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54368BFC230EDB4E00233C71 /* WebViewVC.swift */; };
 		54368BFF230FCC5F00233C71 /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54368BFE230FCC5F00233C71 /* NewsVC.swift */; };
 		54368C01230FE5D400233C71 /* NewsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54368C00230FE5D400233C71 /* NewsTVCell.swift */; };
-		54368C0323102B8900233C71 /* NewsWebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54368C0223102B8900233C71 /* NewsWebViewVC.swift */; };
 		54368C052310FD7800233C71 /* ContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54368C042310FD7800233C71 /* ContactVC.swift */; };
 		54368C072311511D00233C71 /* GoogleMapsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54368C062311511D00233C71 /* GoogleMapsVC.swift */; };
 		5477261422FD45D90063CDD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5477261322FD45D90063CDD3 /* AppDelegate.swift */; };
@@ -43,6 +42,8 @@
 		54A0C7DA23152EA5006F0580 /* CareerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0C7D923152EA5006F0580 /* CareerViewModel.swift */; };
 		54A0C7DC2315385A006F0580 /* CareersVC-Extension+TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0C7DB2315385A006F0580 /* CareersVC-Extension+TableViewDelegate.swift */; };
 		54A0C7DE231538A0006F0580 /* CareersVC-Extension+TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0C7DD231538A0006F0580 /* CareersVC-Extension+TableViewDataSource.swift */; };
+		54A0C7E023153D70006F0580 /* ContactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0C7DF23153D70006F0580 /* ContactsModel.swift */; };
+		54A0C7E223153DAE006F0580 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0C7E123153DAE006F0580 /* ContactsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,7 +55,6 @@
 		54368BFC230EDB4E00233C71 /* WebViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewVC.swift; sourceTree = "<group>"; };
 		54368BFE230FCC5F00233C71 /* NewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
 		54368C00230FE5D400233C71 /* NewsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTVCell.swift; sourceTree = "<group>"; };
-		54368C0223102B8900233C71 /* NewsWebViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsWebViewVC.swift; sourceTree = "<group>"; };
 		54368C042310FD7800233C71 /* ContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactVC.swift; sourceTree = "<group>"; };
 		54368C062311511D00233C71 /* GoogleMapsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsVC.swift; sourceTree = "<group>"; };
 		5449BEAA61235C0163E33210 /* Pods-YMLApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YMLApp.debug.xcconfig"; path = "Target Support Files/Pods-YMLApp/Pods-YMLApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -84,6 +84,8 @@
 		54A0C7D923152EA5006F0580 /* CareerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerViewModel.swift; sourceTree = "<group>"; };
 		54A0C7DB2315385A006F0580 /* CareersVC-Extension+TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CareersVC-Extension+TableViewDelegate.swift"; sourceTree = "<group>"; };
 		54A0C7DD231538A0006F0580 /* CareersVC-Extension+TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CareersVC-Extension+TableViewDataSource.swift"; sourceTree = "<group>"; };
+		54A0C7DF23153D70006F0580 /* ContactsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsModel.swift; sourceTree = "<group>"; };
+		54A0C7E123153DAE006F0580 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
 		BA8922655753214A1C5A1BD5 /* Pods_YMLApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YMLApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFE50FFA38E1F3E9A2191861 /* Pods-YMLApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YMLApp.release.xcconfig"; path = "Target Support Files/Pods-YMLApp/Pods-YMLApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,9 +129,6 @@
 				54368BF0230E50D600233C71 /* Assets.xcassets */,
 				5477261322FD45D90063CDD3 /* AppDelegate.swift */,
 				5477261F22FD45DA0063CDD3 /* Info.plist */,
-				54368C0223102B8900233C71 /* NewsWebViewVC.swift */,
-				54368C042310FD7800233C71 /* ContactVC.swift */,
-				54368C062311511D00233C71 /* GoogleMapsVC.swift */,
 			);
 			path = YMLApp;
 			sourceTree = "<group>";
@@ -141,6 +140,7 @@
 				54A0C7C323150EE2006F0580 /* MainScreenViewModel.swift */,
 				54A0C7D123152242006F0580 /* NewsViewModel.swift */,
 				54A0C7D923152EA5006F0580 /* CareerViewModel.swift */,
+				54A0C7E123153DAE006F0580 /* ContactsViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -170,6 +170,8 @@
 				54A0C7B02313BCB0006F0580 /* CareersVCCell.swift */,
 				54A0C7DB2315385A006F0580 /* CareersVC-Extension+TableViewDelegate.swift */,
 				54A0C7DD231538A0006F0580 /* CareersVC-Extension+TableViewDataSource.swift */,
+				54368C042310FD7800233C71 /* ContactVC.swift */,
+				54368C062311511D00233C71 /* GoogleMapsVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -181,6 +183,7 @@
 				54A0C7B923150835006F0580 /* WorkModel.swift */,
 				54A0C7CF231520FB006F0580 /* NewsModel.swift */,
 				54A0C7D723152E5D006F0580 /* CareerModel.swift */,
+				54A0C7DF23153D70006F0580 /* ContactsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				54A0C7BE23150C3D006F0580 /* WorkVC-Extension+TableViewDelegate.swift in Sources */,
 				54368C01230FE5D400233C71 /* NewsTVCell.swift in Sources */,
 				54A0C7DE231538A0006F0580 /* CareersVC-Extension+TableViewDataSource.swift in Sources */,
+				54A0C7E023153D70006F0580 /* ContactsModel.swift in Sources */,
 				54368BEB230D062F00233C71 /* MainScreenVC.swift in Sources */,
 				54A0C7CA2315127C006F0580 /* MainScreenVC-Extension+CollectionViewDelegateFlowLayout.swift in Sources */,
 				54368C072311511D00233C71 /* GoogleMapsVC.swift in Sources */,
@@ -352,7 +356,6 @@
 				54A0C7D423152634006F0580 /* NewsVC-Extension+TableViewDelegate.swift in Sources */,
 				54A0C7C023150D71006F0580 /* WorkVC-Extension+TableViewDataSource.swift in Sources */,
 				54A0C7C423150EE2006F0580 /* MainScreenViewModel.swift in Sources */,
-				54368C0323102B8900233C71 /* NewsWebViewVC.swift in Sources */,
 				54A0C7BC23150973006F0580 /* WorkViewModel.swift in Sources */,
 				54368BFF230FCC5F00233C71 /* NewsVC.swift in Sources */,
 				5477261422FD45D90063CDD3 /* AppDelegate.swift in Sources */,
@@ -363,6 +366,7 @@
 				54368BED230D199B00233C71 /* MainScreenCell.swift in Sources */,
 				54A0C7D823152E5D006F0580 /* CareerModel.swift in Sources */,
 				54A0C7B12313BCB0006F0580 /* CareersVCCell.swift in Sources */,
+				54A0C7E223153DAE006F0580 /* ContactsViewModel.swift in Sources */,
 				54A0C7CE2315151C006F0580 /* WebVIewVC-Extension+WKNavigationDelegate.swift in Sources */,
 				54A0C7D223152242006F0580 /* NewsViewModel.swift in Sources */,
 				54368BF9230EAA3000233C71 /* WorkVC.swift in Sources */,

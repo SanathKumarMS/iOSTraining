@@ -290,21 +290,6 @@
             </objects>
             <point key="canvasLocation" x="2263.768115942029" y="910.71428571428567"/>
         </scene>
-        <!--News Web ViewVC-->
-        <scene sceneID="mN0-uh-7n1">
-            <objects>
-                <viewController storyboardIdentifier="NewsWebViewVC" id="rI9-Jh-MHy" customClass="NewsWebViewVC" customModule="YMLApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="NJP-QZ-rj9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="oGj-i1-hzr"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3VB-jp-Vho" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2264" y="1603"/>
-        </scene>
         <!--Careers-->
         <scene sceneID="Xse-C1-NWo">
             <objects>
