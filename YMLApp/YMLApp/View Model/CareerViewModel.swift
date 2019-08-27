@@ -10,7 +10,9 @@ import Foundation
 import HCVimeoVideoExtractor
 
 class CareerViewModel{
+    
     var jsonItems: [Data] = []
+    
     let jsonURL = "http://jsonstub.com/positions"
     let userKey = "5b87065d-b207-44fc-aa26-b9e1253720d6"
     let projectKey = "9a5070e8-cd53-46d4-ae0a-c25f3458c81c"
@@ -20,14 +22,19 @@ class CareerViewModel{
     typealias videoHandler = ((URL) -> Void)
     
     func loadPositionsFromJson(_ compHandler: @escaping jsonHandler){
+        
+        //
         guard let url = URL(string: jsonURL) else { return }
         
         var request = URLRequest(url: url)
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue(userKey, forHTTPHeaderField: "JsonStub-User-Key")
         request.addValue(projectKey, forHTTPHeaderField: "JsonStub-Project-Key")
+        //In Network Manager
         
-        let session = URLSession.shared.dataTask(with: request, completionHandler: { data,response,error in
+        let session = URLSession.shared.dataTask(with: request, completionHandler: {
+            //
+            data,response,error in
             
             if let error = error{
                 print(error)
@@ -52,6 +59,7 @@ class CareerViewModel{
                     print("Error : \(error)")
                 }
             }
+            //In VM (Here only)
         })
         session.resume()
     }

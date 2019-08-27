@@ -12,6 +12,21 @@ class NewsViewModel{
     
     var newsItems: [News] = []
     
+    enum Segment: Int{
+        case featured
+        case design
+        case ebooks
+    }
+    
+    func setNewsItems(_ segmentIndex: Int){
+        switch segmentIndex{
+        case Segment.featured.rawValue: getFeatured()
+        case Segment.design.rawValue: getDesign()
+        case Segment.ebooks.rawValue: getEbooks()
+        default: print("Error")
+        }
+    }
+    
     func getFeatured(){
         newsItems = []
         let adam = News(image: "featured1", category: "AGENCY / CULTURE / UNDEFINED / UNCATEGORIZED", description: "Getting to Know: Adam Talcott – Software Engineering Manager at YML", url: "https://ymedialabs.com/getting-to-know-adam-talcott")

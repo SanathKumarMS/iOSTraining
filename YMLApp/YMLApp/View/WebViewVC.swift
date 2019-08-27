@@ -24,8 +24,8 @@ class WebViewVC: UIViewController {
     
     override func loadView() {
         webView = WKWebView()
-        webView.navigationDelegate = self
+        
+        webView?.navigationDelegate = self
         view = webView
     }
-
 }

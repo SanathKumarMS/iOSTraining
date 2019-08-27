@@ -20,7 +20,7 @@ extension MainScreenVC: UICollectionViewDataSource{
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainScreenCell", for: indexPath) as? MainScreenCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: "MainScreenCell"), for: indexPath) as? MainScreenCell
         
         print(indexPath.row)
         print("Item \(indexPath.item)")
@@ -29,17 +29,19 @@ extension MainScreenVC: UICollectionViewDataSource{
         cell?.titleLabel.sizeToFit()
         cell?.logo.image = UIImage(named: viewModel.products[indexPath.row].logoName)
         cell?.descriptionLabel.text = viewModel.products[indexPath.row].description
+        //cell?.titleLabel.layer.zPosition = 1.0
         //cell?.titleLabel.font = UIFont.systemFont(ofSize: 30)
         
-        if(indexPath.row == 0)
-        {
-            cell?.imageView.image = nil
-            cell?.logo.image = nil
-            cell?.titleLabel.text = viewModel.products[indexPath.row].title
-            cell?.descriptionLabel.text = viewModel.products[indexPath.row].description
-            cell?.titleLabel.font = UIFont.boldSystemFont(ofSize: 40)
-            print("First cell")
-        }
+        //CLARIFY
+//        if(indexPath.row == 0)
+//        {
+//            cell?.imageView.image = nil
+//            cell?.logo.image = nil
+//            cell?.titleLabel.text = viewModel.products[indexPath.row].title
+//            cell?.descriptionLabel.text = viewModel.products[indexPath.row].description
+//            cell?.titleLabel.font = UIFont.boldSystemFont(ofSize: 40)
+//            print("First cell")
+//        }
         
         return cell ?? MainScreenCell()
     }

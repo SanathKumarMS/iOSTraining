@@ -18,20 +18,14 @@ class NewsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.getFeatured()
+        viewModel.setNewsItems(0)
         tableView.separatorColor = .black
         
     }
     
     //View Model
     @IBAction func indexChanged(_ sender: Any) {
-        switch segmentedControl.selectedSegmentIndex
-        {
-        case 0: viewModel.getFeatured()
-        case 1: viewModel.getDesign()
-        case 2: viewModel.getEbooks()
-        default: break
-        }
+        viewModel.setNewsItems(segmentedControl.selectedSegmentIndex)
         tableView.reloadData()
     }
 }

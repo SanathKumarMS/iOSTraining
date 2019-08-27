@@ -16,7 +16,7 @@ extension NewsVC: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: "NewsTVCell"), for: indexPath) as? NewsTVCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: NewsTVCell.self), for: indexPath) as? NewsTVCell
         
         cell?.newsImageView.image = UIImage(named: viewModel.newsItems[indexPath.row].image)
         cell?.newsCategory.text = viewModel.newsItems[indexPath.row].category.uppercased()
