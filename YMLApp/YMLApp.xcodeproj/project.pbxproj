@@ -20,6 +20,10 @@
 		54368C072311511D00233C71 /* GoogleMapsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54368C062311511D00233C71 /* GoogleMapsVC.swift */; };
 		5467DE3823158249001DD290 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5467DE3723158249001DD290 /* NetworkManager.swift */; };
 		5467DE3A2316626D001DD290 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5467DE392316626D001DD290 /* BaseVC.swift */; };
+		5467DE3C2316B1C6001DD290 /* BaseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5467DE3B2316B1C6001DD290 /* BaseVM.swift */; };
+		5467DE3E2316B1E3001DD290 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5467DE3D2316B1E3001DD290 /* BaseView.swift */; };
+		5467DE402316B8D4001DD290 /* BaseTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5467DE3F2316B8D4001DD290 /* BaseTVCell.swift */; };
+		5467DE422316B8F7001DD290 /* BaseCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5467DE412316B8F7001DD290 /* BaseCVCell.swift */; };
 		5477261422FD45D90063CDD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5477261322FD45D90063CDD3 /* AppDelegate.swift */; };
 		5477261922FD45D90063CDD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5477261722FD45D90063CDD3 /* Main.storyboard */; };
 		5477261E22FD45DA0063CDD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5477261C22FD45DA0063CDD3 /* LaunchScreen.storyboard */; };
@@ -62,6 +66,10 @@
 		5449BEAA61235C0163E33210 /* Pods-YMLApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YMLApp.debug.xcconfig"; path = "Target Support Files/Pods-YMLApp/Pods-YMLApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5467DE3723158249001DD290 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		5467DE392316626D001DD290 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		5467DE3B2316B1C6001DD290 /* BaseVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVM.swift; sourceTree = "<group>"; };
+		5467DE3D2316B1E3001DD290 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		5467DE3F2316B8D4001DD290 /* BaseTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTVCell.swift; sourceTree = "<group>"; };
+		5467DE412316B8F7001DD290 /* BaseCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCVCell.swift; sourceTree = "<group>"; };
 		5477261022FD45D90063CDD3 /* YMLApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YMLApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5477261322FD45D90063CDD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5477261822FD45D90063CDD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -146,6 +154,7 @@
 				54A0C7D923152EA5006F0580 /* CareerViewModel.swift */,
 				54A0C7E123153DAE006F0580 /* ContactsViewModel.swift */,
 				5467DE3723158249001DD290 /* NetworkManager.swift */,
+				5467DE3B2316B1C6001DD290 /* BaseVM.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -178,6 +187,9 @@
 				54368C042310FD7800233C71 /* ContactVC.swift */,
 				54368C062311511D00233C71 /* GoogleMapsVC.swift */,
 				5467DE392316626D001DD290 /* BaseVC.swift */,
+				5467DE3D2316B1E3001DD290 /* BaseView.swift */,
+				5467DE3F2316B8D4001DD290 /* BaseTVCell.swift */,
+				5467DE412316B8F7001DD290 /* BaseCVCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -346,6 +358,7 @@
 			files = (
 				54A0C7DC2315385A006F0580 /* CareersVC-Extension+TableViewDelegate.swift in Sources */,
 				54368BFB230EACA300233C71 /* WorkTVCell.swift in Sources */,
+				5467DE402316B8D4001DD290 /* BaseTVCell.swift in Sources */,
 				54A0C7C62315113D006F0580 /* MainScreenVC-Extension+CollectionViewDataSource.swift in Sources */,
 				54A0C7D62315269F006F0580 /* NewsVC-Extension+TableViewDataSource.swift in Sources */,
 				54A0C7C823151221006F0580 /* MainScreenVC-Extension+CollectionViewDelegate.swift in Sources */,
@@ -357,7 +370,10 @@
 				5467DE3823158249001DD290 /* NetworkManager.swift in Sources */,
 				54A0C7E023153D70006F0580 /* ContactsModel.swift in Sources */,
 				54368BEB230D062F00233C71 /* MainScreenVC.swift in Sources */,
+				5467DE3E2316B1E3001DD290 /* BaseView.swift in Sources */,
+				5467DE3C2316B1C6001DD290 /* BaseVM.swift in Sources */,
 				54A0C7CA2315127C006F0580 /* MainScreenVC-Extension+CollectionViewDelegateFlowLayout.swift in Sources */,
+				5467DE422316B8F7001DD290 /* BaseCVCell.swift in Sources */,
 				54368C072311511D00233C71 /* GoogleMapsVC.swift in Sources */,
 				54A0C7CC2315135D006F0580 /* MainScreenVC-Extension+ScrollViewDelegate.swift in Sources */,
 				54A0C7D423152634006F0580 /* NewsVC-Extension+TableViewDelegate.swift in Sources */,

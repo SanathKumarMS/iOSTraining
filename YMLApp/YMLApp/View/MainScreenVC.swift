@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainScreenVC: UIViewController {
+class MainScreenVC: BaseVC {
     
     @IBOutlet weak var collectionView: UICollectionView!
     

@@ -11,7 +11,7 @@ import AVKit
 import AVFoundation
 import HCVimeoVideoExtractor
 
-class CareersVC: UIViewController {
+class CareersVC: BaseVC {
     
     var viewModel = CareerViewModel()
   

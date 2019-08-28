@@ -9,7 +9,7 @@
 import Foundation
 import HCVimeoVideoExtractor
 
-class CareerViewModel{
+class CareerViewModel: BaseVM{
     
     var jsonItems: [Opening] = []
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewsVC: UIViewController {
+class NewsVC: BaseVC {
 
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     

@@ -16,6 +16,7 @@ struct AlertAction{
 }
 
 class BaseVC: UIViewController{
+    
     var webView: WKWebView?
     
     func presentInWebView(urlString: String) -> WKWebView{
@@ -25,11 +26,11 @@ class BaseVC: UIViewController{
         
         
         if let webView = webView{
-            webView.allowsBackForwardNavigationGestures = true
+            //webView.allowsBackForwardNavigationGestures = true
             if let url = URL(string: urlString){
                 webView.load(URLRequest(url: url))
             }
-            return webView
+            view.addSubview(webView)
             
         }
         return WKWebView()

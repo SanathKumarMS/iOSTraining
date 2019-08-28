@@ -14,14 +14,14 @@ protocol HTTPMethods{
 }
 
 
-class NetworkManager: HTTPMethods{
+class NetworkManager: BaseVM, HTTPMethods{
     
     static let shared = NetworkManager()
     
-    private init(){
+    private override init(){
     }
     
-    func get(urlString: String, headers: [String : String]? = nil, successHandler: @escaping (Data) -> Void) {
+    func get(urlString: String, headers: [String: String]? = nil, successHandler: @escaping (Data) -> Void) {
         guard let url = URL(string: urlString) else { return}
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"

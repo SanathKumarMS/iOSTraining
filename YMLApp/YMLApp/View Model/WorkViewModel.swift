@@ -8,11 +8,12 @@
 
 import Foundation
 
-class WorkViewModel{
+class WorkViewModel: BaseVM{
     
-    lazy var workProducts: [WorkProduct] = []
+    var workProducts: [WorkProduct] = []
     
-    init() {
+    override init() {
+        super.init()
         initialize()
     }
     

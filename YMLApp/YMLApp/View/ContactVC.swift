@@ -93,11 +93,7 @@ extension ContactVC{
         }
         if let url = URL(string: urlString){
             if UIApplication.shared.canOpenURL(url) == true{
-                if #available(iOS 10.0, *) {
-                    UIApplication.shared.open(url)
-                } else {
-                    UIApplication.shared.openURL(url)
-                }
+                UIApplication.shared.open(url) 
             }
         }
     }
