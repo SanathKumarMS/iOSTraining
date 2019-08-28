@@ -9,11 +9,11 @@
 import Foundation
 
 
-struct Root: Decodable{
+struct Root: Codable{
     let data: [Opening]
 }
 
-struct Opening: Decodable{
+struct Opening: Codable{
     let domain: String
     let position: String
     let location: String

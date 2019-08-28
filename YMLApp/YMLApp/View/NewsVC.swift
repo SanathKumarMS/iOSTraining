@@ -18,7 +18,7 @@ class NewsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.setNewsItems(0)
+        viewModel.setNewsItems(segmentedControl.selectedSegmentIndex)
         tableView.separatorColor = .black
         
     }

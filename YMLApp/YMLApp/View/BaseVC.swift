@@ -18,21 +18,29 @@ struct AlertAction{
 class BaseVC: UIViewController{
     var webView: WKWebView?
     
-    func presentInWebView(urlString: String){
+    func presentInWebView(urlString: String) -> WKWebView{
         webView = WKWebView()
-        webView?.allowsBackForwardNavigationGestures = true
-        if let url = URL(string: urlString){
-            webView?.load(URLRequest(url: url))
+        webView?.frame = view.frame
+        //webView?.frame = CGRect(x: 0, y: 0, width: 300, height: 600)
+        
+        
+        if let webView = webView{
+            webView.allowsBackForwardNavigationGestures = true
+            if let url = URL(string: urlString){
+                webView.load(URLRequest(url: url))
+            }
+            //webView.alpha = 1.0
+            return webView
+            
         }
-        self.view = webView
+        return WKWebView()
     }
     
-    func presentAlert(title: String, message: String, style: UIAlertController.Style, actions: [AlertAction]) -> UIAlertController{
+    func presentAlert(title: String, message: String, style: UIAlertController.Style, actions: [AlertAction]){
         let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
         for item in actions{
             alertController.addAction(UIAlertAction(title: item.title, style: item.style, handler: nil))
         }
-        return alertController
+        present(alertController, animated: true, completion: nil)
     }
-    
 }

@@ -41,38 +41,16 @@ class ContactVC: BaseVC {
     }
     
     @objc func showMailAlert(_ sender: UITapGestureRecognizer){
-        let emailaddress = mailLabel.text ?? "invalid email"
-        if let mailURL = URL(string: "mailto:\(String(describing: emailaddress))"){
-            print(UIApplication.shared.canOpenURL(mailURL))
-            if #available(iOS 10.0, *) {
-                UIApplication.shared.open(mailURL)
-            } else {
-                UIApplication.shared.openURL(mailURL)
-            }
+        if let emailaddress = mailLabel.text{
+            openApp(rawString: emailaddress, appType: .mail)
+            self.presentAlert(title: "Send mail to \(String(describing: emailaddress))?", message: "", style: .alert, actions: [AlertAction(title: "Send", style: .default), AlertAction(title: "Cancel", style: .cancel)])
         }
-
-        
-//        let alert = UIAlertController(title: "Send mail to \(String(describing: emailaddress))?", message: "Message", preferredStyle: .alert)
-//
-//        let sendAction = UIAlertAction(title: "Send", style: .default, handler: nil)
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-//        alert.addAction(sendAction)
-//        alert.addAction(cancelAction)
-        let alert = self.presentAlert(title: "Send mail to \(String(describing: emailaddress))?", message: "Message", style: .actionSheet, actions: [AlertAction(title: "Send", style: .default), AlertAction(title: "Cancel", style: .cancel)])
-        self.present(alert, animated: true)
     }
     
     @objc func showCallAlert(_ sender: UITapGestureRecognizer){
-        let phoneNumber = contactLabel.text ?? "invalid number"
-        if let phoneURL = URL(string: ("tel://\(phoneNumber)")) {
-            print(UIApplication.shared.canOpenURL(phoneURL))
-            let alert = UIAlertController(title: ("Call \(phoneNumber)"), message: nil, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Call", style: .default, handler: { (action) in
-                UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
-            }))
-            
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+        if let phoneNumber = contactLabel.text{
+            openApp(rawString: phoneNumber, appType: .phone)
+            self.presentAlert(title: "Call \(String(describing: phoneNumber))?", message: "", style: .alert, actions: [AlertAction(title: "Call", style: .default), AlertAction(title: "Cancel", style: .cancel)])
         }
     }
     
@@ -99,7 +77,35 @@ class ContactVC: BaseVC {
             }
         }
     }
-    
+}
 
+
+
+extension ContactVC{
     
+    func openApp(rawString: String, appType: AppType){
+        var urlString = rawString
+        switch appType {
+        case .phone:
+            urlString = "tel://" + urlString
+        case .mail:
+            urlString = "mailto:" + urlString
+        }
+        if let url = URL(string: urlString){
+            if UIApplication.shared.canOpenURL(url) == true{
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+            }
+        }
+    }
+}
+
+
+enum AppType
+{
+    case phone
+    case mail
 }

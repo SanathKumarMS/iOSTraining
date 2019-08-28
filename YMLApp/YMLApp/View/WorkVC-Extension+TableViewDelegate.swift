@@ -21,7 +21,9 @@ extension WorkVC: UITableViewDelegate{
 //            workWebViewVC.url = URL(string: viewModel.workProducts[indexPath.row].url)
 //            self.navigationController?.pushViewController(workWebViewVC, animated: true)
 //        }
-        self.presentInWebView(urlString: viewModel.workProducts[indexPath.row].url)
+        
+        let webView = self.presentInWebView(urlString: viewModel.workProducts[indexPath.row].url)
+        view.addSubview(webView)
     }
     
 }
