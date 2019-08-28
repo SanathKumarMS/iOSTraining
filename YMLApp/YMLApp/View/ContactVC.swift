@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 import GoogleMaps
 
 class ContactVC: BaseVC {
@@ -43,39 +44,74 @@ class ContactVC: BaseVC {
     @objc func showMailAlert(_ sender: UITapGestureRecognizer){
         if let emailaddress = mailLabel.text{
             openApp(rawString: emailaddress, appType: .mail)
-            self.presentAlert(title: "Send mail to \(String(describing: emailaddress))?", message: "", style: .alert, actions: [AlertAction(title: "Send", style: .default), AlertAction(title: "Cancel", style: .cancel)])
+            self.presentAlert(title: "Send mail to \(String(describing: emailaddress))?", message: "", style: .alert, actions: [AlertAction(title: "Send", style: .default, handler: nil), AlertAction(title: "Cancel", style: .cancel, handler: nil)])
         }
     }
     
     @objc func showCallAlert(_ sender: UITapGestureRecognizer){
         if let phoneNumber = contactLabel.text{
             openApp(rawString: phoneNumber, appType: .phone)
-            self.presentAlert(title: "Call \(String(describing: phoneNumber))?", message: "", style: .alert, actions: [AlertAction(title: "Call", style: .default), AlertAction(title: "Cancel", style: .cancel)])
+            self.presentAlert(title: "Call \(String(describing: phoneNumber))?", message: "", style: .alert, actions: [AlertAction(title: "Call", style: .default, handler: nil), AlertAction(title: "Cancel", style: .cancel, handler: nil)])
         }
     }
     
     @objc func showLocationOnMaps(_ sender: UITapGestureRecognizer){
         
+//        if sender == locationTapGesture1{
+//            let address = viewModel.sanFrancisco.address
+//            let query = "?daddr=\(viewModel.sanFrancisco.latitude),\(viewModel.sanFrancisco.longitude)"
+//
+//            //let mapURL = "http://maps.apple.com/?daddr=\(address)&dirflg=d&t=h"
+//            let mapURL = "http://maps.apple.com/\(query)&dirflg=d&t=h"
+//            if let url = URL(string: mapURL){
+//                if UIApplication.shared.canOpenURL(url){
+//                    UIApplication.shared.open(url)
+//                }
+//            }
+//        }
+//        else{
+//            if let googleMapsVC = self.storyboard?.instantiateViewController(withIdentifier: String(describing: GoogleMapsVC.self)) as? GoogleMapsVC
+//            {
+//                googleMapsVC.latitude = Double(viewModel.bangalore.latitude)
+//                googleMapsVC.longitude = Double(viewModel.bangalore.longitude)
+//                googleMapsVC.marker.title = "Bangalore"
+//                googleMapsVC.marker.snippet = "India"
+//                self.navigationController?.pushViewController(googleMapsVC, animated: true)
+//            }
+//        }
+        var lat = 0.0
+        var long = 0.0
         if sender == locationTapGesture1{
-            if let googleMapsVC = self.storyboard?.instantiateViewController(withIdentifier: String(describing: GoogleMapsVC.self)) as? GoogleMapsVC
-            {
-                googleMapsVC.latitude = Double(viewModel.sanFrancisco.latitude)
-                googleMapsVC.longitude = Double(viewModel.sanFrancisco.longitude)
-                googleMapsVC.marker.title = "California"
-                googleMapsVC.marker.snippet = "USA"
-                self.navigationController?.pushViewController(googleMapsVC, animated: true)
-            }
+            lat = viewModel.sanFrancisco.latitude
+            long = viewModel.sanFrancisco.longitude
         }
         else{
-            if let googleMapsVC = self.storyboard?.instantiateViewController(withIdentifier: String(describing: GoogleMapsVC.self)) as? GoogleMapsVC
-            {
-                googleMapsVC.latitude = Double(viewModel.bangalore.latitude)
-                googleMapsVC.longitude = Double(viewModel.bangalore.longitude)
-                googleMapsVC.marker.title = "Bangalore"
-                googleMapsVC.marker.snippet = "India"
-                self.navigationController?.pushViewController(googleMapsVC, animated: true)
-            }
+            lat = viewModel.bangalore.latitude
+            long = viewModel.bangalore.longitude
         }
+        let appleMaps = AlertAction(title: "Apple Maps", style: .default, handler: {
+            (AlertAction) in
+            let query = "?daddr=\(String(describing: lat)),\(String(describing: long))"
+                print(query)
+                let mapURL = "http://maps.apple.com/\(query)&dirflg=d&t=h"
+                if let url = URL(string: mapURL){
+                    if UIApplication.shared.canOpenURL(url){
+                        UIApplication.shared.open(url)
+                    }
+                }
+        })
+        
+        let googleMaps = AlertAction(title: "Google Maps", style: .default, handler: {
+            (AlertAction) in
+            let mapURL = "comgooglemaps://?saddr=&daddr=\(String(describing: lat)),\(String(describing: long))&directionsmode=driving"
+            print(mapURL)
+            if let url = URL(string: mapURL){
+                if UIApplication.shared.canOpenURL(url){
+                    UIApplication.shared.open(url)
+                }
+            }
+        })
+        presentAlert(title: "Open location", message: "", style: .actionSheet, actions: [appleMaps, googleMaps])
     }
 }
 

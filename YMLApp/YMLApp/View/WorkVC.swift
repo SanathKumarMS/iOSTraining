@@ -16,7 +16,6 @@ class WorkVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //viewModel.initialize()
     }
     
