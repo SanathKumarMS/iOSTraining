@@ -89,34 +89,7 @@ class NetworkManager: HTTPMethods{
             }
         }).resume()
     }
-    
-//    func get(request: URLRequest, comp: @escaping (Data?, URLResponse?, Error?) -> Void){
-////        URLSession.shared.dataTask(with: request) {[weak self] (data, respnse, err) in
-////            guard let weaself = self else { return }
-////            comp(data, respnse, err)
-////        }
-//
-//        URLSession.shared.dataTask(with: request, completionHandler: comp)
-//        .resume()
-//    }
-//
-//    func get(request: URLRequest, successHandler: @escaping (Data) -> Void){
-//        let completionHandler: (Data?, URLResponse?, Error?) -> Void = {(data, response, error) in
-//            if let error = error{
-//                print(error.localizedDescription)
-//            }
-//            if let response = response as? HTTPURLResponse{
-//                if response.statusCode >= 200 && response.statusCode < 300{
-//                    guard let data = data else { return}
-//                    successHandler(data)
-//                }
-//                else{
-//                    print("Invalid response")
-//                }
-//            }
-//        }
-//        URLSession.shared.dataTask(with: request, completionHandler: completionHandler)
-//    }
+
 }
 
 

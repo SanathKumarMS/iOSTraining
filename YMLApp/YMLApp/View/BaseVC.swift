@@ -29,7 +29,6 @@ class BaseVC: UIViewController{
             if let url = URL(string: urlString){
                 webView.load(URLRequest(url: url))
             }
-            //webView.alpha = 1.0
             return webView
             
         }
