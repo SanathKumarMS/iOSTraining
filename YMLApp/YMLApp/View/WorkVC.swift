@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WorkVC: UIViewController {
+class WorkVC: BaseVC {
 
     @IBOutlet weak var tableView: UITableView!
     

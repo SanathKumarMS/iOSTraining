@@ -19,6 +19,7 @@
 		54368C052310FD7800233C71 /* ContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54368C042310FD7800233C71 /* ContactVC.swift */; };
 		54368C072311511D00233C71 /* GoogleMapsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54368C062311511D00233C71 /* GoogleMapsVC.swift */; };
 		5467DE3823158249001DD290 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5467DE3723158249001DD290 /* NetworkManager.swift */; };
+		5467DE3A2316626D001DD290 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5467DE392316626D001DD290 /* BaseVC.swift */; };
 		5477261422FD45D90063CDD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5477261322FD45D90063CDD3 /* AppDelegate.swift */; };
 		5477261922FD45D90063CDD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5477261722FD45D90063CDD3 /* Main.storyboard */; };
 		5477261E22FD45DA0063CDD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5477261C22FD45DA0063CDD3 /* LaunchScreen.storyboard */; };
@@ -60,6 +61,7 @@
 		54368C062311511D00233C71 /* GoogleMapsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsVC.swift; sourceTree = "<group>"; };
 		5449BEAA61235C0163E33210 /* Pods-YMLApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YMLApp.debug.xcconfig"; path = "Target Support Files/Pods-YMLApp/Pods-YMLApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5467DE3723158249001DD290 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		5467DE392316626D001DD290 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		5477261022FD45D90063CDD3 /* YMLApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YMLApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5477261322FD45D90063CDD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5477261822FD45D90063CDD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				54A0C7DD231538A0006F0580 /* CareersVC-Extension+TableViewDataSource.swift */,
 				54368C042310FD7800233C71 /* ContactVC.swift */,
 				54368C062311511D00233C71 /* GoogleMapsVC.swift */,
+				5467DE392316626D001DD290 /* BaseVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				54A0C7D423152634006F0580 /* NewsVC-Extension+TableViewDelegate.swift in Sources */,
 				54A0C7C023150D71006F0580 /* WorkVC-Extension+TableViewDataSource.swift in Sources */,
 				54A0C7C423150EE2006F0580 /* MainScreenViewModel.swift in Sources */,
+				5467DE3A2316626D001DD290 /* BaseVC.swift in Sources */,
 				54A0C7BC23150973006F0580 /* WorkViewModel.swift in Sources */,
 				54368BFF230FCC5F00233C71 /* NewsVC.swift in Sources */,
 				5477261422FD45D90063CDD3 /* AppDelegate.swift in Sources */,

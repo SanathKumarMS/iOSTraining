@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMaps
 
-class ContactVC: UIViewController {
+class ContactVC: BaseVC {
 
     @IBOutlet weak var mailLabel: UILabel!
     @IBOutlet weak var contactLabel: UILabel!
@@ -50,15 +50,16 @@ class ContactVC: UIViewController {
                 UIApplication.shared.openURL(mailURL)
             }
         }
-    
+
         
-        let alert = UIAlertController(title: "Send mail to \(String(describing: emailaddress))?", message: "", preferredStyle: .alert)
-        
-        let sendAction = UIAlertAction(title: "Send", style: .default, handler: nil)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        alert.addAction(sendAction)
-        alert.addAction(cancelAction)
-        self.present(alert, animated: true, completion: nil)
+//        let alert = UIAlertController(title: "Send mail to \(String(describing: emailaddress))?", message: "Message", preferredStyle: .alert)
+//
+//        let sendAction = UIAlertAction(title: "Send", style: .default, handler: nil)
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+//        alert.addAction(sendAction)
+//        alert.addAction(cancelAction)
+        let alert = self.presentAlert(title: "Send mail to \(String(describing: emailaddress))?", message: "Message", style: .actionSheet, actions: [AlertAction(title: "Send", style: .default), AlertAction(title: "Cancel", style: .cancel)])
+        self.present(alert, animated: true)
     }
     
     @objc func showCallAlert(_ sender: UITapGestureRecognizer){

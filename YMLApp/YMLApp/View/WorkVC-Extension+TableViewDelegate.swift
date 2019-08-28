@@ -17,11 +17,11 @@ extension WorkVC: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        if let workWebViewVC = self.storyboard?.instantiateViewController(withIdentifier: String(describing: WebViewVC.self)) as? WebViewVC{
-            workWebViewVC.url = URL(string: viewModel.workProducts[indexPath.row].url)
-            self.navigationController?.pushViewController(workWebViewVC, animated: true)
-        }
-        
+//        if let workWebViewVC = self.storyboard?.instantiateViewController(withIdentifier: String(describing: WebViewVC.self)) as? WebViewVC{
+//            workWebViewVC.url = URL(string: viewModel.workProducts[indexPath.row].url)
+//            self.navigationController?.pushViewController(workWebViewVC, animated: true)
+//        }
+        self.presentInWebView(urlString: viewModel.workProducts[indexPath.row].url)
     }
     
 }
