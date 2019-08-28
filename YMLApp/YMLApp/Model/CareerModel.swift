@@ -10,10 +10,10 @@ import Foundation
 
 
 struct Root: Decodable{
-    let data: [Data]
+    let data: [Opening]
 }
 
-struct Data: Decodable{
+struct Opening: Decodable{
     let domain: String
     let position: String
     let location: String

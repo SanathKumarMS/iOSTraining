@@ -11,7 +11,7 @@ import HCVimeoVideoExtractor
 
 class CareerViewModel{
     
-    var jsonItems: [Data] = []
+    var jsonItems: [Opening] = []
     
     let jsonURL = "http://jsonstub.com/positions"
     let userKey = "5b87065d-b207-44fc-aa26-b9e1253720d6"
