@@ -23,7 +23,7 @@ class ContactVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("Contact us viewdidload")
         addTapGestures()
     }
     
@@ -43,14 +43,14 @@ class ContactVC: BaseVC {
     
     @objc func showMailAlert(_ sender: UITapGestureRecognizer){
         if let emailaddress = mailLabel.text{
-            openApp(rawString: emailaddress, appType: .mail)
+            Helper.openApp(rawString: emailaddress, appType: .mail)
             self.presentAlert(title: "Send mail to \(String(describing: emailaddress))?", message: "", style: .alert, actions: [AlertAction(title: "Send", style: .default, handler: nil), AlertAction(title: "Cancel", style: .cancel, handler: nil)])
         }
     }
     
     @objc func showCallAlert(_ sender: UITapGestureRecognizer){
         if let phoneNumber = contactLabel.text{
-            openApp(rawString: phoneNumber, appType: .phone)
+            Helper.openApp(rawString: phoneNumber, appType: .phone)
             self.presentAlert(title: "Call \(String(describing: phoneNumber))?", message: "", style: .alert, actions: [AlertAction(title: "Call", style: .default, handler: nil), AlertAction(title: "Cancel", style: .cancel, handler: nil)])
         }
     }
@@ -76,7 +76,7 @@ class ContactVC: BaseVC {
 //                        UIApplication.shared.open(url)
 //                    }
 //                }
-            self.openApp(rawString: "", appType: .appleMaps, latitude: lat, longitude: long)
+            Helper.openApp(rawString: "", appType: .appleMaps, latitude: lat, longitude: long)
         })
         
         let googleMaps = AlertAction(title: "Google Maps", style: .default, handler: {
@@ -88,7 +88,7 @@ class ContactVC: BaseVC {
 //                    UIApplication.shared.open(url)
 //                }
 //            }
-            self.openApp(rawString: "", appType: .googleMaps, latitude: lat, longitude: long)
+            Helper.openApp(rawString: "", appType: .googleMaps, latitude: lat, longitude: long)
         })
         let cancel = AlertAction(title: "Cancel", style: .cancel, handler: nil)
         
@@ -98,38 +98,6 @@ class ContactVC: BaseVC {
 
 
 
-extension ContactVC{
-    
-    func openApp(rawString: String, appType: AppType, latitude: Double? = nil, longitude: Double? = nil){
-        var urlString = rawString
-        switch appType {
-        case .phone:
-            urlString = "tel://" + urlString
-        case .mail:
-            urlString = "mailto:" + urlString
-        case .appleMaps:
-            if let latitude = latitude, let longitude = longitude{
-                let query = "?daddr=\(String(describing: latitude)),\(String(describing: longitude))"
-                urlString = "http://maps.apple.com/\(query)&dirflg=d&t=h"
-            }
-        case .googleMaps:
-            if let latitude = latitude, let longitude = longitude{
-                urlString = "comgooglemaps://?saddr=&daddr=\(String(describing: latitude)),\(String(describing: longitude))&directionsmode=driving"
-            }
-        }
-        if let url = URL(string: urlString){
-            if UIApplication.shared.canOpenURL(url){
-                UIApplication.shared.open(url) 
-            }
-        }
-    }
-}
 
 
-enum AppType
-{
-    case phone
-    case mail
-    case appleMaps
-    case googleMaps
-}
+

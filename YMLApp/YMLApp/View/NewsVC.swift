@@ -18,6 +18,7 @@ class NewsVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("News viewdidload")
         viewModel.setNewsItems(segmentedControl.selectedSegmentIndex)
         tableView.separatorColor = .black
         

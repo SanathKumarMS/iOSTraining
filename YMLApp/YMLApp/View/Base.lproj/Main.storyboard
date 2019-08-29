@@ -175,7 +175,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NCF-C3-kJa">
-                                <rect key="frame" x="20" y="211" width="374" height="244"/>
+                                <rect key="frame" x="20" y="189" width="374" height="244"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="244" id="4Uu-Z3-whF"/>
@@ -249,12 +249,12 @@
                                 </constraints>
                             </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="gf1-TY-Hpv">
-                                <rect key="frame" x="187.5" y="463" width="39" height="37"/>
+                                <rect key="frame" x="187.5" y="441" width="39" height="37"/>
                                 <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" red="0.25757700179999998" green="0.8980392157" blue="0.061177828279999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TeW-9J-GBu">
-                                <rect key="frame" x="20" y="508" width="374" height="271"/>
+                                <rect key="frame" x="20" y="486" width="374" height="293"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="idy-pj-hQD">
                                     <size key="itemSize" width="165" height="149"/>
@@ -297,7 +297,7 @@
                             <constraint firstItem="HEh-GT-p1P" firstAttribute="top" secondItem="BVQ-Xr-9nj" secondAttribute="top" constant="15" id="5HW-hr-oqc"/>
                             <constraint firstItem="TeW-9J-GBu" firstAttribute="top" secondItem="gf1-TY-Hpv" secondAttribute="bottom" constant="8" id="6I8-wK-COm"/>
                             <constraint firstItem="HEh-GT-p1P" firstAttribute="centerX" secondItem="Vvh-dg-LHB" secondAttribute="centerX" id="8Z7-Ib-tC2"/>
-                            <constraint firstItem="NCF-C3-kJa" firstAttribute="top" secondItem="HEh-GT-p1P" secondAttribute="bottom" constant="42" id="E1U-hb-FYH"/>
+                            <constraint firstItem="NCF-C3-kJa" firstAttribute="top" secondItem="HEh-GT-p1P" secondAttribute="bottom" constant="20" id="E1U-hb-FYH"/>
                             <constraint firstItem="TeW-9J-GBu" firstAttribute="leading" secondItem="BVQ-Xr-9nj" secondAttribute="leading" constant="20" id="I4P-az-Se4"/>
                             <constraint firstItem="gf1-TY-Hpv" firstAttribute="centerX" secondItem="Vvh-dg-LHB" secondAttribute="centerX" id="J5h-e2-wVQ"/>
                             <constraint firstItem="gf1-TY-Hpv" firstAttribute="top" secondItem="NCF-C3-kJa" secondAttribute="bottom" constant="8" id="SW2-yn-rjm"/>
@@ -655,6 +655,7 @@
                             <constraint firstItem="FUE-7m-5F2" firstAttribute="top" secondItem="GUA-oU-Dx5" secondAttribute="bottom" constant="20" id="Ag6-Nd-Uqg"/>
                             <constraint firstItem="FUE-7m-5F2" firstAttribute="leading" secondItem="vpT-Hz-KXU" secondAttribute="leading" constant="20" id="BaV-jD-ki9"/>
                             <constraint firstItem="ycA-Hj-8p6" firstAttribute="leading" secondItem="vpT-Hz-KXU" secondAttribute="leading" constant="20" id="E7d-5x-NRg"/>
+                            <constraint firstItem="vpT-Hz-KXU" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="FfX-f3-2Cv" secondAttribute="bottom" constant="20" id="Ftl-l2-cEI"/>
                             <constraint firstItem="ycA-Hj-8p6" firstAttribute="top" secondItem="FUE-7m-5F2" secondAttribute="bottom" constant="20" id="MbL-wN-WaQ"/>
                             <constraint firstItem="FfX-f3-2Cv" firstAttribute="top" secondItem="ycA-Hj-8p6" secondAttribute="bottom" constant="25" id="eD0-lR-6zn"/>
                             <constraint firstItem="Gmv-f4-ItR" firstAttribute="top" secondItem="vpT-Hz-KXU" secondAttribute="top" constant="5" id="eR5-WZ-7Ht"/>
@@ -809,10 +810,10 @@
             </objects>
             <point key="canvasLocation" x="505.79710144927537" y="1609.1517857142856"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab BarVC-->
         <scene sceneID="T84-sW-Fbk">
             <objects>
-                <tabBarController id="TkA-v1-ejP" sceneMemberID="viewController">
+                <tabBarController id="TkA-v1-ejP" customClass="TabBarVC" customModule="YMLApp" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="LoG-BM-b2Z"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Mjh-IG-1aJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
