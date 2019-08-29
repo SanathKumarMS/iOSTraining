@@ -197,13 +197,33 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aA9-3d-W8k">
                                                     <rect key="frame" x="0.0" y="0.0" width="366" height="244"/>
                                                 </imageView>
+                                                <button contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SL9-nn-BVf">
+                                                    <rect key="frame" x="328" y="109.5" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="4Bx-ab-WXI"/>
+                                                        <constraint firstAttribute="width" constant="25" id="huo-FT-bWC"/>
+                                                    </constraints>
+                                                    <state key="normal" image="nextarrowicon"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNW-Nk-MUf">
+                                                    <rect key="frame" x="13" y="109.5" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="25" id="9JM-dE-AXB"/>
+                                                        <constraint firstAttribute="height" constant="25" id="EhD-CB-1Af"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="prevarrow"/>
+                                                </button>
                                             </subviews>
                                         </view>
                                         <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="SL9-nn-BVf" secondAttribute="trailing" constant="5" id="7Zi-Ug-6ge"/>
                                             <constraint firstAttribute="trailing" secondItem="aA9-3d-W8k" secondAttribute="trailing" id="BOe-Za-9rF"/>
                                             <constraint firstItem="aA9-3d-W8k" firstAttribute="leading" secondItem="8Kj-8k-QEb" secondAttribute="leading" id="BcJ-CN-Ieo"/>
                                             <constraint firstAttribute="bottom" secondItem="aA9-3d-W8k" secondAttribute="bottom" id="I4w-Dw-je4"/>
+                                            <constraint firstItem="hNW-Nk-MUf" firstAttribute="centerY" secondItem="8Kj-8k-QEb" secondAttribute="centerY" id="TfH-hF-ado"/>
                                             <constraint firstItem="aA9-3d-W8k" firstAttribute="top" secondItem="8Kj-8k-QEb" secondAttribute="top" id="Xmx-r8-Y71"/>
+                                            <constraint firstItem="hNW-Nk-MUf" firstAttribute="leading" secondItem="8Kj-8k-QEb" secondAttribute="leadingMargin" constant="5" id="brl-z5-Ula"/>
+                                            <constraint firstItem="SL9-nn-BVf" firstAttribute="centerY" secondItem="8Kj-8k-QEb" secondAttribute="centerY" id="dO2-rT-a7u"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="aA9-3d-W8k" id="Mzb-PZ-MVV"/>
@@ -767,5 +787,7 @@
         <image name="icon_contact_us" width="16.666666030883789" height="16.666666030883789"/>
         <image name="icon_news" width="16.666666030883789" height="16.666666030883789"/>
         <image name="icon_work" width="16.666666030883789" height="16.666666030883789"/>
+        <image name="nextarrowicon" width="200" height="200"/>
+        <image name="prevarrow" width="512" height="512"/>
     </resources>
 </document>
