@@ -24,6 +24,10 @@
 		5467DE3E2316B1E3001DD290 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5467DE3D2316B1E3001DD290 /* BaseView.swift */; };
 		5467DE402316B8D4001DD290 /* BaseTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5467DE3F2316B8D4001DD290 /* BaseTVCell.swift */; };
 		5467DE422316B8F7001DD290 /* BaseCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5467DE412316B8F7001DD290 /* BaseCVCell.swift */; };
+		5467DE44231791A2001DD290 /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5467DE43231791A2001DD290 /* AboutUsVC.swift */; };
+		5467DE4623179A63001DD290 /* AboutUsCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5467DE4523179A63001DD290 /* AboutUsCVCell.swift */; };
+		5467DE482317A8A7001DD290 /* AboutUsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5467DE472317A8A7001DD290 /* AboutUsModel.swift */; };
+		5467DE4A2317A97E001DD290 /* AboutUsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5467DE492317A97E001DD290 /* AboutUsVM.swift */; };
 		5477261422FD45D90063CDD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5477261322FD45D90063CDD3 /* AppDelegate.swift */; };
 		5477261922FD45D90063CDD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5477261722FD45D90063CDD3 /* Main.storyboard */; };
 		5477261E22FD45DA0063CDD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5477261C22FD45DA0063CDD3 /* LaunchScreen.storyboard */; };
@@ -70,6 +74,10 @@
 		5467DE3D2316B1E3001DD290 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		5467DE3F2316B8D4001DD290 /* BaseTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTVCell.swift; sourceTree = "<group>"; };
 		5467DE412316B8F7001DD290 /* BaseCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCVCell.swift; sourceTree = "<group>"; };
+		5467DE43231791A2001DD290 /* AboutUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsVC.swift; sourceTree = "<group>"; };
+		5467DE4523179A63001DD290 /* AboutUsCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsCVCell.swift; sourceTree = "<group>"; };
+		5467DE472317A8A7001DD290 /* AboutUsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsModel.swift; sourceTree = "<group>"; };
+		5467DE492317A97E001DD290 /* AboutUsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsVM.swift; sourceTree = "<group>"; };
 		5477261022FD45D90063CDD3 /* YMLApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YMLApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5477261322FD45D90063CDD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5477261822FD45D90063CDD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -155,6 +163,7 @@
 				54A0C7E123153DAE006F0580 /* ContactsViewModel.swift */,
 				5467DE3723158249001DD290 /* NetworkManager.swift */,
 				5467DE3B2316B1C6001DD290 /* BaseVM.swift */,
+				5467DE492317A97E001DD290 /* AboutUsVM.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -186,6 +195,8 @@
 				54A0C7DD231538A0006F0580 /* CareersVC-Extension+TableViewDataSource.swift */,
 				54368C042310FD7800233C71 /* ContactVC.swift */,
 				54368C062311511D00233C71 /* GoogleMapsVC.swift */,
+				5467DE43231791A2001DD290 /* AboutUsVC.swift */,
+				5467DE4523179A63001DD290 /* AboutUsCVCell.swift */,
 				5467DE392316626D001DD290 /* BaseVC.swift */,
 				5467DE3D2316B1E3001DD290 /* BaseView.swift */,
 				5467DE3F2316B8D4001DD290 /* BaseTVCell.swift */,
@@ -202,6 +213,7 @@
 				54A0C7CF231520FB006F0580 /* NewsModel.swift */,
 				54A0C7D723152E5D006F0580 /* CareerModel.swift */,
 				54A0C7DF23153D70006F0580 /* ContactsModel.swift */,
+				5467DE472317A8A7001DD290 /* AboutUsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -359,6 +371,7 @@
 				54A0C7DC2315385A006F0580 /* CareersVC-Extension+TableViewDelegate.swift in Sources */,
 				54368BFB230EACA300233C71 /* WorkTVCell.swift in Sources */,
 				5467DE402316B8D4001DD290 /* BaseTVCell.swift in Sources */,
+				5467DE482317A8A7001DD290 /* AboutUsModel.swift in Sources */,
 				54A0C7C62315113D006F0580 /* MainScreenVC-Extension+CollectionViewDataSource.swift in Sources */,
 				54A0C7D62315269F006F0580 /* NewsVC-Extension+TableViewDataSource.swift in Sources */,
 				54A0C7C823151221006F0580 /* MainScreenVC-Extension+CollectionViewDelegate.swift in Sources */,
@@ -367,15 +380,18 @@
 				54A0C7BE23150C3D006F0580 /* WorkVC-Extension+TableViewDelegate.swift in Sources */,
 				54368C01230FE5D400233C71 /* NewsTVCell.swift in Sources */,
 				54A0C7DE231538A0006F0580 /* CareersVC-Extension+TableViewDataSource.swift in Sources */,
+				5467DE4623179A63001DD290 /* AboutUsCVCell.swift in Sources */,
 				5467DE3823158249001DD290 /* NetworkManager.swift in Sources */,
 				54A0C7E023153D70006F0580 /* ContactsModel.swift in Sources */,
 				54368BEB230D062F00233C71 /* MainScreenVC.swift in Sources */,
+				5467DE44231791A2001DD290 /* AboutUsVC.swift in Sources */,
 				5467DE3E2316B1E3001DD290 /* BaseView.swift in Sources */,
 				5467DE3C2316B1C6001DD290 /* BaseVM.swift in Sources */,
 				54A0C7CA2315127C006F0580 /* MainScreenVC-Extension+CollectionViewDelegateFlowLayout.swift in Sources */,
 				5467DE422316B8F7001DD290 /* BaseCVCell.swift in Sources */,
 				54368C072311511D00233C71 /* GoogleMapsVC.swift in Sources */,
 				54A0C7CC2315135D006F0580 /* MainScreenVC-Extension+ScrollViewDelegate.swift in Sources */,
+				5467DE4A2317A97E001DD290 /* AboutUsVM.swift in Sources */,
 				54A0C7D423152634006F0580 /* NewsVC-Extension+TableViewDelegate.swift in Sources */,
 				54A0C7C023150D71006F0580 /* WorkVC-Extension+TableViewDataSource.swift in Sources */,
 				54A0C7C423150EE2006F0580 /* MainScreenViewModel.swift in Sources */,
