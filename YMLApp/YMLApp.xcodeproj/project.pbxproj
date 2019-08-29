@@ -28,6 +28,7 @@
 		5467DE4623179A63001DD290 /* AboutUsCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5467DE4523179A63001DD290 /* AboutUsCVCell.swift */; };
 		5467DE482317A8A7001DD290 /* AboutUsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5467DE472317A8A7001DD290 /* AboutUsModel.swift */; };
 		5467DE4A2317A97E001DD290 /* AboutUsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5467DE492317A97E001DD290 /* AboutUsVM.swift */; };
+		5467DE4C2317DA15001DD290 /* AboutUsCVGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5467DE4B2317DA15001DD290 /* AboutUsCVGridCell.swift */; };
 		5477261422FD45D90063CDD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5477261322FD45D90063CDD3 /* AppDelegate.swift */; };
 		5477261922FD45D90063CDD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5477261722FD45D90063CDD3 /* Main.storyboard */; };
 		5477261E22FD45DA0063CDD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5477261C22FD45DA0063CDD3 /* LaunchScreen.storyboard */; };
@@ -78,6 +79,7 @@
 		5467DE4523179A63001DD290 /* AboutUsCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsCVCell.swift; sourceTree = "<group>"; };
 		5467DE472317A8A7001DD290 /* AboutUsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsModel.swift; sourceTree = "<group>"; };
 		5467DE492317A97E001DD290 /* AboutUsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsVM.swift; sourceTree = "<group>"; };
+		5467DE4B2317DA15001DD290 /* AboutUsCVGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsCVGridCell.swift; sourceTree = "<group>"; };
 		5477261022FD45D90063CDD3 /* YMLApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YMLApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5477261322FD45D90063CDD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5477261822FD45D90063CDD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				54368C062311511D00233C71 /* GoogleMapsVC.swift */,
 				5467DE43231791A2001DD290 /* AboutUsVC.swift */,
 				5467DE4523179A63001DD290 /* AboutUsCVCell.swift */,
+				5467DE4B2317DA15001DD290 /* AboutUsCVGridCell.swift */,
 				5467DE392316626D001DD290 /* BaseVC.swift */,
 				5467DE3D2316B1E3001DD290 /* BaseView.swift */,
 				5467DE3F2316B8D4001DD290 /* BaseTVCell.swift */,
@@ -384,6 +387,7 @@
 				5467DE3823158249001DD290 /* NetworkManager.swift in Sources */,
 				54A0C7E023153D70006F0580 /* ContactsModel.swift in Sources */,
 				54368BEB230D062F00233C71 /* MainScreenVC.swift in Sources */,
+				5467DE4C2317DA15001DD290 /* AboutUsCVGridCell.swift in Sources */,
 				5467DE44231791A2001DD290 /* AboutUsVC.swift in Sources */,
 				5467DE3E2316B1E3001DD290 /* BaseView.swift in Sources */,
 				5467DE3C2316B1C6001DD290 /* BaseVM.swift in Sources */,

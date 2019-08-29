@@ -248,12 +248,49 @@
                                     <constraint firstAttribute="height" constant="66" id="nUc-U9-dZQ"/>
                                 </constraints>
                             </imageView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="gf1-TY-Hpv">
-                                <rect key="frame" x="145" y="463" width="120" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="gf1-TY-Hpv">
+                                <rect key="frame" x="187.5" y="463" width="39" height="37"/>
                                 <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" red="0.25757700179999998" green="0.8980392157" blue="0.061177828279999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TeW-9J-GBu">
+                                <rect key="frame" x="20" y="508" width="374" height="271"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="idy-pj-hQD">
+                                    <size key="itemSize" width="165" height="149"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AboutUsCVGridCell" id="SXF-49-Dxd" customClass="AboutUsCVGridCell" customModule="YMLApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="165" height="149"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="165" height="149"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WhI-Kx-th8">
+                                                    <rect key="frame" x="59.5" y="59.5" width="46" height="30"/>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="WhI-Kx-th8" firstAttribute="centerX" secondItem="SXF-49-Dxd" secondAttribute="centerX" id="Exq-5z-mtQ"/>
+                                            <constraint firstItem="WhI-Kx-th8" firstAttribute="centerY" secondItem="SXF-49-Dxd" secondAttribute="centerY" id="re6-M4-nBg"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="button" destination="WhI-Kx-th8" id="TdI-Eg-Db4"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="xsZ-yi-mKx" id="fbY-a7-HhT"/>
+                                    <outlet property="delegate" destination="xsZ-yi-mKx" id="gHX-Vs-8e8"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -261,6 +298,8 @@
                             <constraint firstItem="NCF-C3-kJa" firstAttribute="leading" secondItem="BVQ-Xr-9nj" secondAttribute="leading" constant="20" id="2id-zT-H31"/>
                             <constraint firstItem="HEh-GT-p1P" firstAttribute="top" secondItem="BVQ-Xr-9nj" secondAttribute="top" constant="15" id="5HW-hr-oqc"/>
                             <constraint firstItem="HEh-GT-p1P" firstAttribute="centerX" secondItem="Vvh-dg-LHB" secondAttribute="centerX" id="8Z7-Ib-tC2"/>
+                            <constraint firstItem="gf1-TY-Hpv" firstAttribute="centerX" secondItem="Vvh-dg-LHB" secondAttribute="centerX" id="J5h-e2-wVQ"/>
+                            <constraint firstItem="gf1-TY-Hpv" firstAttribute="top" secondItem="NCF-C3-kJa" secondAttribute="bottom" constant="8" id="SW2-yn-rjm"/>
                             <constraint firstItem="NCF-C3-kJa" firstAttribute="top" secondItem="HEh-GT-p1P" secondAttribute="bottom" constant="42" id="l0e-rZ-scv"/>
                             <constraint firstItem="NCF-C3-kJa" firstAttribute="centerX" secondItem="Vvh-dg-LHB" secondAttribute="centerX" id="lPj-PS-Rjp"/>
                         </constraints>
@@ -269,6 +308,7 @@
                     <tabBarItem key="tabBarItem" title="About" image="icon_about_us" id="rQi-JK-lkJ"/>
                     <connections>
                         <outlet property="collectionView" destination="NCF-C3-kJa" id="Xif-R5-om1"/>
+                        <outlet property="gridCollectionView" destination="TeW-9J-GBu" id="cQv-cG-XIJ"/>
                         <outlet property="pageController" destination="gf1-TY-Hpv" id="4sH-DQ-qTK"/>
                     </connections>
                 </viewController>

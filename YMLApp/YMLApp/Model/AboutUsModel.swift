@@ -11,3 +11,7 @@ import Foundation
 struct About{
     var image: String
 }
+
+struct Grid{
+    var name: String
+}
