@@ -56,29 +56,6 @@ class ContactVC: BaseVC {
     }
     
     @objc func showLocationOnMaps(_ sender: UITapGestureRecognizer){
-        
-//        if sender == locationTapGesture1{
-//            let address = viewModel.sanFrancisco.address
-//            let query = "?daddr=\(viewModel.sanFrancisco.latitude),\(viewModel.sanFrancisco.longitude)"
-//
-//            //let mapURL = "http://maps.apple.com/?daddr=\(address)&dirflg=d&t=h"
-//            let mapURL = "http://maps.apple.com/\(query)&dirflg=d&t=h"
-//            if let url = URL(string: mapURL){
-//                if UIApplication.shared.canOpenURL(url){
-//                    UIApplication.shared.open(url)
-//                }
-//            }
-//        }
-//        else{
-//            if let googleMapsVC = self.storyboard?.instantiateViewController(withIdentifier: String(describing: GoogleMapsVC.self)) as? GoogleMapsVC
-//            {
-//                googleMapsVC.latitude = Double(viewModel.bangalore.latitude)
-//                googleMapsVC.longitude = Double(viewModel.bangalore.longitude)
-//                googleMapsVC.marker.title = "Bangalore"
-//                googleMapsVC.marker.snippet = "India"
-//                self.navigationController?.pushViewController(googleMapsVC, animated: true)
-//            }
-//        }
         var lat = 0.0
         var long = 0.0
         if sender == locationTapGesture1{
@@ -91,27 +68,31 @@ class ContactVC: BaseVC {
         }
         let appleMaps = AlertAction(title: "Apple Maps", style: .default, handler: {
             (AlertAction) in
-            let query = "?daddr=\(String(describing: lat)),\(String(describing: long))"
-                print(query)
-                let mapURL = "http://maps.apple.com/\(query)&dirflg=d&t=h"
-                if let url = URL(string: mapURL){
-                    if UIApplication.shared.canOpenURL(url){
-                        UIApplication.shared.open(url)
-                    }
-                }
+//            let query = "?daddr=\(String(describing: lat)),\(String(describing: long))"
+//                print(query)
+//                let mapURL = "http://maps.apple.com/\(query)&dirflg=d&t=h"
+//                if let url = URL(string: mapURL){
+//                    if UIApplication.shared.canOpenURL(url){
+//                        UIApplication.shared.open(url)
+//                    }
+//                }
+            self.openApp(rawString: "", appType: .appleMaps, latitude: lat, longitude: long)
         })
         
         let googleMaps = AlertAction(title: "Google Maps", style: .default, handler: {
             (AlertAction) in
-            let mapURL = "comgooglemaps://?saddr=&daddr=\(String(describing: lat)),\(String(describing: long))&directionsmode=driving"
-            print(mapURL)
-            if let url = URL(string: mapURL){
-                if UIApplication.shared.canOpenURL(url){
-                    UIApplication.shared.open(url)
-                }
-            }
+//            let mapURL = "comgooglemaps://?saddr=&daddr=\(String(describing: lat)),\(String(describing: long))&directionsmode=driving"
+//            print(mapURL)
+//            if let url = URL(string: mapURL){
+//                if UIApplication.shared.canOpenURL(url){
+//                    UIApplication.shared.open(url)
+//                }
+//            }
+            self.openApp(rawString: "", appType: .googleMaps, latitude: lat, longitude: long)
         })
-        presentAlert(title: "Open location", message: "", style: .actionSheet, actions: [appleMaps, googleMaps])
+        let cancel = AlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        presentAlert(title: "Open location", message: "", style: .actionSheet, actions: [appleMaps, googleMaps, cancel])
     }
 }
 
@@ -119,16 +100,25 @@ class ContactVC: BaseVC {
 
 extension ContactVC{
     
-    func openApp(rawString: String, appType: AppType){
+    func openApp(rawString: String, appType: AppType, latitude: Double? = nil, longitude: Double? = nil){
         var urlString = rawString
         switch appType {
         case .phone:
             urlString = "tel://" + urlString
         case .mail:
             urlString = "mailto:" + urlString
+        case .appleMaps:
+            if let latitude = latitude, let longitude = longitude{
+                let query = "?daddr=\(String(describing: latitude)),\(String(describing: longitude))"
+                urlString = "http://maps.apple.com/\(query)&dirflg=d&t=h"
+            }
+        case .googleMaps:
+            if let latitude = latitude, let longitude = longitude{
+                urlString = "comgooglemaps://?saddr=&daddr=\(String(describing: latitude)),\(String(describing: longitude))&directionsmode=driving"
+            }
         }
         if let url = URL(string: urlString){
-            if UIApplication.shared.canOpenURL(url) == true{
+            if UIApplication.shared.canOpenURL(url){
                 UIApplication.shared.open(url) 
             }
         }
@@ -140,4 +130,6 @@ enum AppType
 {
     case phone
     case mail
+    case appleMaps
+    case googleMaps
 }
